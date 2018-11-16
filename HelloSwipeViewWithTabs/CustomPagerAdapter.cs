@@ -10,8 +10,8 @@ namespace HelloSwipeViewWithTabs
 {
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
-        const int PAGE_COUNT = 2;
-        private string[] tabTitles = { "Tab1", "Tab2" };
+        const int PAGE_COUNT = 4;
+        private string[] tabTitles = { "Library", "List", "Item", "Settings" };
         readonly Context context;
 
         public CustomPagerAdapter(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)

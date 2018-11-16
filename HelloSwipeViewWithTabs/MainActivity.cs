@@ -22,11 +22,11 @@ namespace HelloSwipeViewWithTabs
             var pager = FindViewById<ViewPager>(Resource.Id.pager);
             var tabLayout = FindViewById<TabLayout>(Resource.Id.sliding_tabs);
             var adapter = new CustomPagerAdapter(this, SupportFragmentManager);
-            var toolbar = FindViewById<Toolbar>(Resource.Id.my_toolbar);
+            //var toolbar = FindViewById<Toolbar>(Resource.Id.my_toolbar);
 
             // Setup Toolbar
-            SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Test";
+            //SetSupportActionBar(toolbar);
+            //SupportActionBar.Title = "Test";
 
             // Set adapter to view pager
             pager.Adapter = adapter;

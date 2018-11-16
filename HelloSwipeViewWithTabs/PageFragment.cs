@@ -29,10 +29,24 @@ namespace HelloSwipeViewWithTabs
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var view = inflater.Inflate(Resource.Layout.fragment_page, container, false);
-            var textView = (TextView) view;
-            textView.Text = "Fragment #" + mPage;
-            return view;
+            switch (mPage)
+            {
+                case 1:
+                    var view = inflater.Inflate(Resource.Layout.fragment_page, container, false);
+                    var textView = (TextView)view;
+                    textView.Text = "Fragment #" + mPage;
+                    return view;
+                case 2:
+                    var view2 = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
+                    var textView2 = (TextView)view2;
+                    textView2.Text = "Fragment #" + mPage;
+                    return view2;
+                default:
+                    var view_d = inflater.Inflate(Resource.Layout.fragment_page, container, false);
+                    var textView_d = (TextView)view_d;
+                    textView_d.Text = "Fragment #" + mPage;
+                    return view_d;
+            }
         }
     }
 }
