@@ -42,6 +42,7 @@ namespace HelloSwipeViewWithTabs
                     var items = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
                     ArrayAdapter<string> adapter = new ArrayAdapter<string>(Activity.ApplicationContext, Android.Resource.Layout.SimpleListItem1, items);
                     listView.Adapter = adapter;
+                    listView.ItemClick += ListView_ItemClick;
                     return view2;
                 case 3:
                     var view3 = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
@@ -55,6 +56,11 @@ namespace HelloSwipeViewWithTabs
                     textView_d.Text = "Fragment #" + mPage;
                     return view_d;
             }
+        }
+
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Toast.MakeText(Activity.ApplicationContext, "Hello!", ToastLength.Short).Show();
         }
     }
 }
