@@ -6,6 +6,25 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px">
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_gravity="center"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout1" >
+		<Button
+			android:text="123"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/button1" />
+		<Button
+			android:text="ABC"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/button2" />
+	</LinearLayout>
 	<SearchView
 		android:minWidth="25px"
 		android:minHeight="25px"

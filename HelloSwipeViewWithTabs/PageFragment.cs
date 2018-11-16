@@ -38,6 +38,10 @@ namespace HelloSwipeViewWithTabs
                     return view1;
                 case 2:
                     var view2 = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
+                    var listView = view2.FindViewById<ListView>(Resource.Id.listView1);
+                    var items = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
+                    ArrayAdapter<string> adapter = new ArrayAdapter<string>(Activity.ApplicationContext, Android.Resource.Layout.SimpleListItem1, items);
+                    listView.Adapter = adapter;
                     return view2;
                 case 3:
                     var view3 = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
