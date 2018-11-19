@@ -15,6 +15,7 @@ namespace HelloSwipeViewWithTabs
     public class MainActivity : AppCompatActivity
     {
         public static Context MyContext;
+        public static ViewPager MyPager;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -30,6 +31,8 @@ namespace HelloSwipeViewWithTabs
             var tabLayout = FindViewById<TabLayout>(Resource.Id.sliding_tabs);
             var adapter = new CustomPagerAdapter(this, SupportFragmentManager);
             //var toolbar = FindViewById<Toolbar>(Resource.Id.my_toolbar);
+
+            MyPager = pager;
 
             // Setup Toolbar
             //SetSupportActionBar(toolbar);

@@ -8,6 +8,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
+using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 
@@ -51,19 +52,52 @@ namespace HelloSwipeViewWithTabs
             View v = inflater.Inflate(Resource.Layout.fragment_page_4, container, false);
             var btn = v.FindViewById<Button>(Resource.Id.button1);
             btn.Click += Btn_Click;
-            var chb = v.FindViewById<CheckBox>(Resource.Id.chbRed);
+            var sw = v.FindViewById<Switch>(Resource.Id.switch1);
+            sw.CheckedChange += Sw_CheckedChange;
+            var sw1 = v.FindViewById<Switch>(Resource.Id.switch2);
+            sw1.CheckedChange += Sw_CheckedChange1;
             return v;
+        }
+
+        private void Sw_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.switch1);
+            if (sw.Checked)
+            {
+                Nastaveni.SnackBar = true;
+            }
+            else
+            {
+                Nastaveni.SnackBar = false;
+            }
+        }
+
+        private void Sw_CheckedChange1(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.switch2);
+            if (sw.Checked)
+            {
+                Nastaveni.Red = true;
+            }
+            else
+            {
+                Nastaveni.Red = false;
+            }
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Toast.MakeText(c, "Hello!", ToastLength.Short).Show();
+            //Toast.MakeText(c, "Hello!", ToastLength.Short).Show();
+            MainActivity.MyPager.SetCurrentItem(2, true);
         }
 
         private void Btn_Click(object sender, EventArgs e)
         {
             View view = (View)sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong).SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();Toast.MakeText(c, "Klik!", ToastLength.Short).Show();
+            if (Nastaveni.SnackBar)
+                Snackbar.Make(view, "Klik", Snackbar.LengthLong).SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+            else
+                Toast.MakeText(c, "Klik!", ToastLength.Short).Show();
         }
     }
 }

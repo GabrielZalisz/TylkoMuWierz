@@ -4,48 +4,27 @@
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
-	<CheckBox
+	<Switch
 		android:text="SnackBar"
+		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:id="@+id/checkBox1" />
-	<CheckBox
-		android:text="Red Color"
+		android:id="@+id/switch1"
+		android:layout_marginLeft="30dp"
+		android:layout_marginRight="30dp" />
+	<Switch
+		android:text="Red"
+		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:id="@+id/chbRed" />
+		android:id="@+id/switch2"
+		android:layout_marginLeft="30dp"
+		android:layout_marginRight="30dp" />
 	<Button
-		android:text="Button"
+		android:text="test"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:onClick="onKlik"
 		android:id="@+id/button1" />
-	<Switch
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/switch1" />
-	<ToggleButton
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/toggleButton1" />
-	<RadioButton
-		android:text="RadioButton"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/radioButton1" />
-	<RadioButton
-		android:text="RadioButton"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/radioButton2" />
-	<EditText
-		android:inputType="number"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/editText1" />
 
 </LinearLayout>
