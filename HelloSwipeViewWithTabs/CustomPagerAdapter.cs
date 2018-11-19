@@ -8,7 +8,7 @@ using Java.Lang;
 
 namespace HelloSwipeViewWithTabs
 {
-    public class CustomPagerAdapter : FragmentPagerAdapter
+    public class CustomPagerAdapter : FragmentStatePagerAdapter
     {
         const int PAGE_COUNT = 4;
         private string[] tabTitles = { "Library", "List", "Item", "Settings" };
@@ -18,7 +18,7 @@ namespace HelloSwipeViewWithTabs
         {
         }
 
-        public CustomPagerAdapter(Context context, FragmentManager fm) : base(fm)
+        public CustomPagerAdapter(Context context, FragmentManager fm) : base(fm)///
         {
             this.context = context;
         }
@@ -27,7 +27,7 @@ namespace HelloSwipeViewWithTabs
             get { return PAGE_COUNT; }
         }
 
-        public override Fragment GetItem(int position)
+        public override Fragment GetItem(int position)///
         {
             return PageFragment.newInstance(position + 1);
         }
@@ -38,7 +38,7 @@ namespace HelloSwipeViewWithTabs
             return CharSequence.ArrayFromStringArray(tabTitles)[position];
         }
 
-        public View GetTabView(int position)
+        public View GetTabView(int position)///
         {
             // Given you have a custom layout in `res/layout/custom_tab.xml` with a TextView
             var tv = (TextView) LayoutInflater.From(context).Inflate(Resource.Layout.custom_tab, null);

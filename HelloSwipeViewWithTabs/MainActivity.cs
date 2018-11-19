@@ -34,7 +34,7 @@ namespace HelloSwipeViewWithTabs
             pager.Adapter = adapter;
 
             // Setup tablayout with view pager
-            tabLayout.SetupWithViewPager(pager);
+            tabLayout.SetupWithViewPager(pager, true);
 
             // Iterate over all tabs and set the custom view
             for (int i = 0; i < tabLayout.TabCount; i++)

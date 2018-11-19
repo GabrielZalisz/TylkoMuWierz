@@ -13,15 +13,17 @@ namespace HelloSwipeViewWithTabs
     {
         const string ARG_PAGE = "ARG_PAGE";
         private int mPage;
-        View view1;
-        View view2;
-        View view3;
-        View view4;
+        static View view1;
+        static View view2;
+        static View view3;
+        static View view4;
 
-        bool view1Ready;
-        bool view2Ready;
-        bool view3Ready;
-        bool view4Ready;
+        static bool view1Ready;
+        static bool view2Ready;
+        static bool view3Ready;
+        static bool view4Ready;
+
+        static bool red;
 
         public static PageFragment newInstance(int page)
         {
@@ -36,12 +38,19 @@ namespace HelloSwipeViewWithTabs
         {
             base.OnCreate(savedInstanceState);
             mPage = Arguments.GetInt(ARG_PAGE);
+        }
 
-
+        public override void OnResume()
+        {
+            
+            base.OnResume();
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            //FragmentTransaction ft = FragmentManager.BeginTransaction();
+            //ft.SetAllowOptimization(false);
+            //ft.Detach(this).Attach(this).CommitAllowingStateLoss();
             switch (mPage)
             {
                 case 1:
@@ -64,17 +73,17 @@ namespace HelloSwipeViewWithTabs
                     }
                     return view2;
                 case 3:
-                    //if (!view3Ready)
-                    //{
+                    if (!view3Ready)
+                    {
+
                         view3 = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
                         var tvNadpis = view3.FindViewById<TextView>(Resource.Id.tvNadpis);
-                        if (pass % 2 == 0)
+                        if (red)
                             tvNadpis.SetTextColor(Color.Red);
                         else
                             tvNadpis.SetTextColor(Color.Black);
                         view3Ready = true;
-                    pass++;
-                    //}
+                    }
                     return view3;
                 case 4:
                     if (!view4Ready)
@@ -95,21 +104,19 @@ namespace HelloSwipeViewWithTabs
             }
         }
 
-        int pass = 0;
-
-        public bool red
-        {
-            get;
-            set;
-        }
-
         private void Chb_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
         {
             var chb = view4.FindViewById<CheckBox>(Resource.Id.chbRed);
             if (chb.Checked)
+            {
                 red = true;
+                TextView v = view3.FindViewById<TextView>(Resource.Id.tvNadpis);
+                v.SetTextColor(Color.Violet);
+            }
             else
+            {
                 red = false;
+            }
             view3Ready = false;
         }
 
