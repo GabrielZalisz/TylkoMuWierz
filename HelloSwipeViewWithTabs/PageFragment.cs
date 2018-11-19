@@ -13,17 +13,20 @@ namespace HelloSwipeViewWithTabs
     {
         const string ARG_PAGE = "ARG_PAGE";
         private int mPage;
-        static View view1;
-        static View view2;
-        static View view3;
-        static View view4;
-
-        static bool view1Ready;
-        static bool view2Ready;
-        static bool view3Ready;
-        static bool view4Ready;
+        public static View view1;
+        public static View view2;
+        public static View view3;
+        public static View view4;
 
         static bool red;
+
+        PageCreator pc;
+
+        public PageFragment()
+        {
+            if (pc == null)
+                pc = new PageCreator(MainActivity.MyContext);            
+        }
 
         public static PageFragment newInstance(int page)
         {
@@ -54,46 +57,27 @@ namespace HelloSwipeViewWithTabs
             switch (mPage)
             {
                 case 1:
-                    if (!view1Ready)
+                    if (view1 == null)
                     {
-                        view1 = inflater.Inflate(Resource.Layout.fragment_page_1, container, false);
-                        view1Ready = true;
+                        view1 = pc.CreatePage1(inflater, container);
                     }
                     return view1;
                 case 2:
-                    if (!view2Ready)
+                    if (view2 == null)
                     {
-                        view2 = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
-                        var listView = view2.FindViewById<ListView>(Resource.Id.listView1);
-                        var items = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
-                        ArrayAdapter<string> adapter = new ArrayAdapter<string>(Activity.ApplicationContext, Android.Resource.Layout.SimpleListItem1, items);
-                        listView.Adapter = adapter;
-                        listView.ItemClick += ListView_ItemClick;
-                        view2Ready = true;
+                        view2 = pc.CreatePage2(inflater, container);
                     }
                     return view2;
                 case 3:
-                    if (!view3Ready)
+                    if (view3 == null)
                     {
-
-                        view3 = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
-                        var tvNadpis = view3.FindViewById<TextView>(Resource.Id.tvNadpis);
-                        if (red)
-                            tvNadpis.SetTextColor(Color.Red);
-                        else
-                            tvNadpis.SetTextColor(Color.Black);
-                        view3Ready = true;
+                        view3 = pc.CreatePage3(inflater, container);
                     }
                     return view3;
                 case 4:
-                    if (!view4Ready)
+                    if (view4 == null)
                     {
-                        view4 = inflater.Inflate(Resource.Layout.fragment_page_4, container, false);
-                        var btn = view4.FindViewById<Button>(Resource.Id.button1);
-                        btn.Click += Btn_Click;
-                        var chb = view4.FindViewById<CheckBox>(Resource.Id.chbRed);
-                        chb.CheckedChange += Chb_CheckedChange;
-                        view4Ready = true;
+                        view4 = pc.CreatePage4(inflater, container);
                     }
                     return view4;
                 default:
@@ -104,40 +88,19 @@ namespace HelloSwipeViewWithTabs
             }
         }
 
-        private void Chb_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
-        {
-            var chb = view4.FindViewById<CheckBox>(Resource.Id.chbRed);
-            if (chb.Checked)
-            {
-                red = true;
-                TextView v = view3.FindViewById<TextView>(Resource.Id.tvNadpis);
-                v.SetTextColor(Color.Violet);
-            }
-            else
-            {
-                red = false;
-            }
-            view3Ready = false;
-        }
-
-        private void Btn_Click(object sender, EventArgs e)
-        {
-            var chb = view4.FindViewById<CheckBox>(Resource.Id.checkBox1);
-            if (chb.Checked)
-            {
-                View view = (View)sender;
-                Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                    .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-            }
-            else
-            { 
-                Toast.MakeText(Activity.ApplicationContext, "Klik!", ToastLength.Short).Show();
-            }
-        }
-
-        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            Toast.MakeText(Activity.ApplicationContext, "Hello!", ToastLength.Short).Show();
-        }
+        //private void Chb_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        //{
+        //    var chb = view4.FindViewById<CheckBox>(Resource.Id.chbRed);
+        //    if (chb.Checked)
+        //    {
+        //        red = true;
+        //        TextView v = view3.FindViewById<TextView>(Resource.Id.tvNadpis);
+        //        v.SetTextColor(Color.Violet);
+        //    }
+        //    else
+        //    {
+        //        red = false;
+        //    }
+        //}
     }
 }

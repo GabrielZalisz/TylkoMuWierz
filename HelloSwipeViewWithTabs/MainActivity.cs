@@ -7,15 +7,20 @@ using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Widget;
 using Android.Views;
+using Android.Content;
 
 namespace HelloSwipeViewWithTabs
 {
     [Activity(Label = "HelloSwipeViewWithTabs", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : AppCompatActivity
     {
+        public static Context MyContext;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
+            MyContext = this.ApplicationContext;
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.main);

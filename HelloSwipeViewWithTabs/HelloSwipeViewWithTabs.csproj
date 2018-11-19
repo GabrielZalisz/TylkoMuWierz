@@ -115,6 +115,8 @@
   <ItemGroup>
     <Compile Include="CustomPagerAdapter.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Nastaveni.cs" />
+    <Compile Include="PageCreator.cs" />
     <Compile Include="PageFragment.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
