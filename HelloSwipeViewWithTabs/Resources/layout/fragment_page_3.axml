@@ -18,14 +18,16 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/textView2" />
-		<TextView
-			android:text="Amazing Grace"
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:id="@+id/textView3"
-			android:gravity="center_vertical" />
+            android:id="@+id/textView2"
+            android:textColor="#ff000000" />
+        <TextView
+            android:text="Amazing Grace"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvNadpis"
+            android:gravity="center_vertical"
+            android:textColor="#ff000000" />
 		<TextView
 			android:text="G"
 			android:textAppearance="?android:attr/textAppearanceSmall"

@@ -5,6 +5,8 @@ using Android.Support.V4.App;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
+using Android.Widget;
+using Android.Views;
 
 namespace HelloSwipeViewWithTabs
 {
@@ -40,6 +42,11 @@ namespace HelloSwipeViewWithTabs
                 TabLayout.Tab tab = tabLayout.GetTabAt(i);
                 tab.SetCustomView(adapter.GetTabView(i));
             }
+        }
+
+        private void onKlik(View v)
+        {
+            Toast.MakeText(this, "Klik!", ToastLength.Short).Show();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
+using Android.Graphics;
 using Android.OS;
+using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
@@ -11,6 +13,15 @@ namespace HelloSwipeViewWithTabs
     {
         const string ARG_PAGE = "ARG_PAGE";
         private int mPage;
+        View view1;
+        View view2;
+        View view3;
+        View view4;
+
+        bool view1Ready;
+        bool view2Ready;
+        bool view3Ready;
+        bool view4Ready;
 
         public static PageFragment newInstance(int page)
         {
@@ -34,27 +45,86 @@ namespace HelloSwipeViewWithTabs
             switch (mPage)
             {
                 case 1:
-                    var view1 = inflater.Inflate(Resource.Layout.fragment_page_1, container, false);
+                    if (!view1Ready)
+                    {
+                        view1 = inflater.Inflate(Resource.Layout.fragment_page_1, container, false);
+                        view1Ready = true;
+                    }
                     return view1;
                 case 2:
-                    var view2 = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
-                    var listView = view2.FindViewById<ListView>(Resource.Id.listView1);
-                    var items = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
-                    ArrayAdapter<string> adapter = new ArrayAdapter<string>(Activity.ApplicationContext, Android.Resource.Layout.SimpleListItem1, items);
-                    listView.Adapter = adapter;
-                    listView.ItemClick += ListView_ItemClick;
+                    if (!view2Ready)
+                    {
+                        view2 = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
+                        var listView = view2.FindViewById<ListView>(Resource.Id.listView1);
+                        var items = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
+                        ArrayAdapter<string> adapter = new ArrayAdapter<string>(Activity.ApplicationContext, Android.Resource.Layout.SimpleListItem1, items);
+                        listView.Adapter = adapter;
+                        listView.ItemClick += ListView_ItemClick;
+                        view2Ready = true;
+                    }
                     return view2;
                 case 3:
-                    var view3 = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
+                    //if (!view3Ready)
+                    //{
+                        view3 = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
+                        var tvNadpis = view3.FindViewById<TextView>(Resource.Id.tvNadpis);
+                        if (pass % 2 == 0)
+                            tvNadpis.SetTextColor(Color.Red);
+                        else
+                            tvNadpis.SetTextColor(Color.Black);
+                        view3Ready = true;
+                    pass++;
+                    //}
                     return view3;
                 case 4:
-                    var view4 = inflater.Inflate(Resource.Layout.fragment_page_4, container, false);
+                    if (!view4Ready)
+                    {
+                        view4 = inflater.Inflate(Resource.Layout.fragment_page_4, container, false);
+                        var btn = view4.FindViewById<Button>(Resource.Id.button1);
+                        btn.Click += Btn_Click;
+                        var chb = view4.FindViewById<CheckBox>(Resource.Id.chbRed);
+                        chb.CheckedChange += Chb_CheckedChange;
+                        view4Ready = true;
+                    }
                     return view4;
                 default:
                     var view_d = inflater.Inflate(Resource.Layout.fragment_page, container, false);
                     var textView_d = (TextView)view_d;
                     textView_d.Text = "Fragment #" + mPage;
                     return view_d;
+            }
+        }
+
+        int pass = 0;
+
+        public bool red
+        {
+            get;
+            set;
+        }
+
+        private void Chb_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var chb = view4.FindViewById<CheckBox>(Resource.Id.chbRed);
+            if (chb.Checked)
+                red = true;
+            else
+                red = false;
+            view3Ready = false;
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            var chb = view4.FindViewById<CheckBox>(Resource.Id.checkBox1);
+            if (chb.Checked)
+            {
+                View view = (View)sender;
+                Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+                    .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+            }
+            else
+            { 
+                Toast.MakeText(Activity.ApplicationContext, "Klik!", ToastLength.Short).Show();
             }
         }
 
