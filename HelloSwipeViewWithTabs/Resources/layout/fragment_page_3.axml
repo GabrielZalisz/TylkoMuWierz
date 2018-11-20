@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px"
-		android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-		android:layout_marginRight="5dp">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:minWidth="25px"
+	android:minHeight="25px"
+	android:background="#fff3dec8">
 	<RelativeLayout
-		android:minWidth="25px"
-		android:minHeight="25px"
 		android:layout_width="match_parent"
-		android:layout_height="20dp"
+		android:layout_height="35dp"
+	android:layout_marginLeft="10dp"
+	android:layout_marginTop="10dp"
+	android:layout_marginRight="10dp"
 		android:id="@+id/linearLayout1">
 		<TextView
+			android:textSize="23dp"
 			android:text="123"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:layout_alignParentLeft="true"
 			android:id="@+id/tvNumer"
-			android:textColor="#ff000000"
+			android:textColor="#ffe65100"
 			android:layout_gravity="left"/>
 		<TextView
+			android:textSize="23dp"
 			android:text="Amazing Grace"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
@@ -32,22 +33,37 @@
 			android:layout_gravity="center"
 			android:layout_centerHorizontal="true" />
 		<TextView
+			android:textSize="23dp"
 			android:text="G"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/tvTonacja"
-			android:textColor="#ff000000"
+			android:textColor="#ffe65100"
 			android:layout_alignParentRight="true"
 			android:layout_gravity="right" />
 	</RelativeLayout>
-    <TextView
-        android:text="111
-222
-333\n444"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvSlowa"
-        android:singleLine="false" />
-
+	<View
+		android:layout_width="fill_parent"
+		android:layout_height="1dp"
+		android:background="#ff000000"/>
+	<ScrollView
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:fillViewport="true">
+	<TextView
+		android:text="111
+222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222
+333\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tvSlowa"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_marginTop="5dp"
+		android:textColor="#ff000000"
+		android:singleLine="false"
+	/>
+	 </ScrollView>
 	
 </LinearLayout>
