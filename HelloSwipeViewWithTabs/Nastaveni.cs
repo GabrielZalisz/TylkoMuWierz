@@ -31,16 +31,27 @@ namespace HelloSwipeViewWithTabs
             set
             {
                 _red = value;
-                TextView tv = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvNadpis);
-                if (value)
-                {
-                    tv.SetTextColor(Color.Red);
-                }
-                else
-                {
-                    tv.SetTextColor(Color.Black);
-                }
             }
+        }
+
+        public static int SongIndex { get; set; }
+
+        public static void SetView3()
+        {
+            if (PageFragment.view3 == null)
+                return;
+            TextView tv = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvNadpis);
+            if (Red)
+            {
+                tv.SetTextColor(Color.Red);
+            }
+            else
+            {
+                tv.SetTextColor(Color.Black);
+            }
+
+            TextView text = PageFragment.view3.FindViewById<TextView>(Resource.Id.textView1);
+            text.Text = DataManager.Songs[SongIndex];
         }
     }
 }

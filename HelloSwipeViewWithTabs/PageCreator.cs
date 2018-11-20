@@ -33,8 +33,7 @@ namespace HelloSwipeViewWithTabs
         {
             View v = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
             var listView = v.FindViewById<ListView>(Resource.Id.listView1);
-            var items = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
-            MyAdapter<string> adapter = new MyAdapter<string>(c, Android.Resource.Layout.SimpleListItem1, items);
+            MyAdapter<string> adapter = new MyAdapter<string>(c, Android.Resource.Layout.SimpleListItem1, DataManager.Songs);
             listView.Adapter = adapter;
             listView.ItemClick += ListView_ItemClick;
             return v;
@@ -87,7 +86,7 @@ namespace HelloSwipeViewWithTabs
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //Toast.MakeText(c, "Hello!", ToastLength.Short).Show();
+            Nastaveni.SongIndex = e.Position;
             MainActivity.MyPager.SetCurrentItem(2, true);
         }
 

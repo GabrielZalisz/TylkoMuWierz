@@ -54,11 +54,6 @@ namespace HelloSwipeViewWithTabs
                 tab.SetCustomView(adapter.GetTabView(i));
             }
         }
-
-        private void onKlik(View v)
-        {
-            Toast.MakeText(this, "Klik!", ToastLength.Short).Show();
-        }
     }
 }
 

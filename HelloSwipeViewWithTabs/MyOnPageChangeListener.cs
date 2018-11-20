@@ -27,7 +27,18 @@ namespace HelloSwipeViewWithTabs
 
         void ViewPager.IOnPageChangeListener.OnPageSelected(int position)
         {
-            //throw new NotImplementedException();
+            switch (position)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    Nastaveni.SetView3();
+                    break;
+                case 3:
+                    break;
+            }
         }
     }
 }
