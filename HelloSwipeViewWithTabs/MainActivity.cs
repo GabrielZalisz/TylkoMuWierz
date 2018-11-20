@@ -8,6 +8,7 @@ using Android.Support.V7.Widget;
 using Android.Widget;
 using Android.Views;
 using Android.Content;
+using static Android.Support.V4.View.ViewPager;
 
 namespace HelloSwipeViewWithTabs
 {
@@ -33,6 +34,8 @@ namespace HelloSwipeViewWithTabs
             //var toolbar = FindViewById<Toolbar>(Resource.Id.my_toolbar);
 
             MyPager = pager;
+            //IOnPageChangeListener l = new 
+            pager.AddOnPageChangeListener(new MyOnPageChangeListener());
 
             // Setup Toolbar
             //SetSupportActionBar(toolbar);

@@ -115,6 +115,8 @@
   <ItemGroup>
     <Compile Include="CustomPagerAdapter.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MyAdapter.cs" />
+    <Compile Include="MyOnPageChangeListener.cs" />
     <Compile Include="Nastaveni.cs" />
     <Compile Include="PageCreator.cs" />
     <Compile Include="PageFragment.cs" />
@@ -154,6 +156,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_page_4.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\list_item.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
