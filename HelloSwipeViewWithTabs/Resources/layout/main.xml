@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fce599">
+	  android:background="@drawable/tmw3">
 
   <!--<android.support.v7.widget.Toolbar
        android:id="@+id/my_toolbar"
@@ -18,19 +18,20 @@
   <android.support.design.widget.TabLayout
        android:id="@+id/sliding_tabs"
        android:layout_width="match_parent"
-       android:layout_height="25dp"
+       android:layout_height="30dp"
        app:tabMaxWidth="0dp"
        app:tabGravity="fill"
        app:tabMode="fixed"
        app:tabPaddingStart="2dp"
-       app:tabPaddingEnd="2dp"/>
+       app:tabPaddingEnd="2dp"
+	     android:background="@android:color/transparent"/>
 
   <android.support.v4.view.ViewPager
        android:id="@+id/pager"
        android:layout_width="match_parent"
        android:layout_height="0dp"
        android:layout_weight="1"
-       android:background="@android:color/white" >
+	     android:background="@android:color/transparent" >
     
   </android.support.v4.view.ViewPager>
 

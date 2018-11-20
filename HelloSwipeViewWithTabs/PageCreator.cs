@@ -32,11 +32,39 @@ namespace HelloSwipeViewWithTabs
         public View CreatePage2(LayoutInflater inflater, ViewGroup container)
         {
             View v = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
+
             var listView = v.FindViewById<ListView>(Resource.Id.listView1);
+            Refresh(listView);
+
+            var btn123 = v.FindViewById<Button>(Resource.Id.btn123);
+            var btnABC = v.FindViewById<Button>(Resource.Id.btnABC);
+
+            btn123.Click += Btn123_Click;
+            btnABC.Click += BtnABC_Click;
+
+
+            return v;
+        }
+
+        void Refresh(ListView listView)
+        {
             MyAdapter<Song> adapter = new MyAdapter<Song>(c, Android.Resource.Layout.SimpleListItem1, DataManager.Songs);
             listView.Adapter = adapter;
             listView.ItemClick += ListView_ItemClick;
-            return v;
+            MainActivity.MyAdapter = adapter;
+            MainActivity.MyListView = listView;
+        }
+
+        private void Btn123_Click(object sender, EventArgs e)
+        {
+            DataManager.Songs = DataManager.Songs.OrderBy(q => q.Numer).ToList();
+            Refresh(MainActivity.MyListView);
+        }
+
+        private void BtnABC_Click(object sender, EventArgs e)
+        {
+            DataManager.Songs = DataManager.Songs.OrderBy(q => q.Tytul).ToList();
+            Refresh(MainActivity.MyListView);
         }
 
         public View CreatePage3(LayoutInflater inflater, ViewGroup container)

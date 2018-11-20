@@ -5,23 +5,26 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:minWidth="25px"
-	android:minHeight="25px">
+	android:minHeight="25px"
+	android:background="@android:color/transparent">
 	<LinearLayout
 		android:orientation="horizontal"
 		android:layout_gravity="center"
 		android:layout_width="wrap_content"
 		android:layout_height="40dp"
-		android:id="@+id/linearLayout1" >
+		android:id="@+id/linearLayout1"
+		android:layout_marginTop="10dp"
+		android:background="@android:color/transparent">
 		<Button
 			android:text="123"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:id="@+id/button1" />
+			android:id="@+id/btn123" />
 		<Button
 			android:text="ABC"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:id="@+id/button2" />
+			android:id="@+id/btnABC" />
 	</LinearLayout>
 	<SearchView
 		android:layout_width="match_parent"
@@ -32,6 +35,7 @@
 		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:background="@android:color/transparent"
 		android:id="@+id/listView1" />
 
 </LinearLayout>
