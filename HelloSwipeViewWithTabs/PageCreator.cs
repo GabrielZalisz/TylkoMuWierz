@@ -33,7 +33,7 @@ namespace HelloSwipeViewWithTabs
         {
             View v = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
             var listView = v.FindViewById<ListView>(Resource.Id.listView1);
-            MyAdapter<string> adapter = new MyAdapter<string>(c, Android.Resource.Layout.SimpleListItem1, DataManager.Songs);
+            MyAdapter<Song> adapter = new MyAdapter<Song>(c, Android.Resource.Layout.SimpleListItem1, DataManager.Songs);
             listView.Adapter = adapter;
             listView.ItemClick += ListView_ItemClick;
             return v;
@@ -42,7 +42,6 @@ namespace HelloSwipeViewWithTabs
         public View CreatePage3(LayoutInflater inflater, ViewGroup container)
         {
             View v = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
-            var tvNadpis = v.FindViewById<TextView>(Resource.Id.tvNadpis);
             return v;
         }
 

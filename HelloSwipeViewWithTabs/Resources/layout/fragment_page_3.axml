@@ -5,44 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1" >
-        <TextView
-            android:text="123"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/textView2"
-            android:textColor="#ff000000" />
-        <TextView
-            android:text="Amazing Grace"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/tvNadpis"
-            android:gravity="center_vertical"
-            android:textColor="#ff000000" />
+    android:minHeight="25px"
+		android:layout_marginLeft="5dp"
+		android:layout_marginTop="5dp"
+		android:layout_marginRight="5dp">
+	<RelativeLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="20dp"
+		android:id="@+id/linearLayout1">
 		<TextView
-			android:text="G"
-			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:text="123"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:id="@+id/textView4"
-			android:gravity="center_vertical" />
-    </LinearLayout>
+			android:layout_alignParentLeft="true"
+			android:id="@+id/tvNumer"
+			android:textColor="#ff000000"
+			android:layout_gravity="left"/>
+		<TextView
+			android:text="Amazing Grace"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/tvTytul"
+			android:textColor="#ff000000"
+			android:layout_gravity="center"
+			android:layout_centerHorizontal="true" />
+		<TextView
+			android:text="G"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/tvTonacja"
+			android:textColor="#ff000000"
+			android:layout_alignParentRight="true"
+			android:layout_gravity="right" />
+	</RelativeLayout>
     <TextView
         android:text="111
 222
 333\n444"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1"
+        android:id="@+id/tvSlowa"
         android:singleLine="false" />
 
 	

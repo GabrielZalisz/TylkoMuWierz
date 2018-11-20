@@ -14,6 +14,35 @@ namespace HelloSwipeViewWithTabs
 {
     public static class DataManager
     {
-        public static string[] Songs = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
+        //public static string[] Songs = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
+
+        public static IList<Song> Songs = new List<Song>();
+
+        public static void LoadSongs()
+        {
+            Songs.Add(new Song()
+            {
+                Numer = 1,
+                Tytul = "Pokus pokus pokus",
+                Tonacja = "G",
+                Slowa = "qwe rtz uio pú) asd fgh jkl ů§ yx cvb nm, .-"
+            });
+
+            Songs.Add(new Song()
+            {
+                Numer = 2,
+                Tytul = "Test test test",
+                Tonacja = "C",
+                Slowa = "qwe rtz uio pú) asd fgh jkl ů§ yx cvb nm, .-"
+            });
+
+            Songs.Add(new Song()
+            {
+                Numer = 3,
+                Tytul = "Prvni prvni prvni",
+                Tonacja = "E",
+                Slowa = "qwe rtz uio pú) asd fgh jkl ů§ yx cvb nm, .-"
+            });
+        }
     }
 }

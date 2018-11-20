@@ -22,6 +22,8 @@ namespace HelloSwipeViewWithTabs
         {
             base.OnCreate(bundle);
 
+            DataManager.LoadSongs();
+
             MyContext = this.ApplicationContext;
 
             // Set our view from the "main" layout resource
@@ -43,6 +45,7 @@ namespace HelloSwipeViewWithTabs
 
             // Set adapter to view pager
             pager.Adapter = adapter;
+            pager.SetCurrentItem(1, false);
 
             // Setup tablayout with view pager
             tabLayout.SetupWithViewPager(pager, true);

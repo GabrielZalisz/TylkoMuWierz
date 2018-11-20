@@ -40,18 +40,25 @@ namespace HelloSwipeViewWithTabs
         {
             if (PageFragment.view3 == null)
                 return;
-            TextView tv = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvNadpis);
+            TextView tvTytul = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvTytul);
             if (Red)
             {
-                tv.SetTextColor(Color.Red);
+                tvTytul.SetTextColor(Color.Red);
             }
             else
             {
-                tv.SetTextColor(Color.Black);
+                tvTytul.SetTextColor(Color.Black);
             }
+            tvTytul.Text = DataManager.Songs[SongIndex].Tytul;
 
-            TextView text = PageFragment.view3.FindViewById<TextView>(Resource.Id.textView1);
-            text.Text = DataManager.Songs[SongIndex];
+            TextView tvNumer = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvNumer);
+            tvNumer.Text = DataManager.Songs[SongIndex].Numer.ToString();
+
+            TextView tvTonacja = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvTonacja);
+            tvTonacja.Text = DataManager.Songs[SongIndex].Tonacja;
+
+            TextView tvSlowa = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvSlowa);
+            tvSlowa.Text = DataManager.Songs[SongIndex].Slowa;
         }
     }
 }

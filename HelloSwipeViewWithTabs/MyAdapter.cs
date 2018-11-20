@@ -14,9 +14,9 @@ namespace HelloSwipeViewWithTabs
 {
     public class MyAdapter<T> : ArrayAdapter
     {
-        T[] prvky;
+        IList<T> prvky;
 
-        public MyAdapter(Context context, int textViewResourceId, T[] objects) : base(context, textViewResourceId, objects)
+        public MyAdapter(Context context, int textViewResourceId, IList<T> objects) : base(context, textViewResourceId, objects.ToArray())
         {
             prvky = objects;
         }
@@ -25,8 +25,12 @@ namespace HelloSwipeViewWithTabs
         {
             //return base.GetView(position, convertView, parent);
             View v = LayoutInflater.From(MainActivity.MyContext).Inflate(Resource.Layout.list_item, null);
-            TextView tv = v.FindViewById<TextView>(Resource.Id.textView111);
-            tv.Text = prvky[position].ToString();
+            TextView tvNumer = v.FindViewById<TextView>(Resource.Id.tvNumer);
+            TextView tvTytul = v.FindViewById<TextView>(Resource.Id.tvTytul);
+            TextView tvTonacja = v.FindViewById<TextView>(Resource.Id.tvTonacja);
+            tvNumer.Text = (prvky[position] as Song).Numer.ToString();
+            tvTytul.Text = (prvky[position] as Song).Tytul.ToString();
+            tvTonacja.Text = "(" + (prvky[position] as Song).Tonacja.ToString() + ")";
             return v;
         }
     }
