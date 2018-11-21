@@ -2,5 +2,6 @@
 <resources>
   <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="colorAccent">#FF000000</item>
+    <item name="android:typeface">serif</item>
   </style>
 </resources>

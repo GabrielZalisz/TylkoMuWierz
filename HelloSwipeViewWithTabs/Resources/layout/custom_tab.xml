@@ -6,4 +6,5 @@
     android:textStyle="bold"
     android:textAllCaps="true"
 		android:fontFamily="serif"
-    android:gravity="center" />
+    android:gravity="center"
+    android:maxLines="1"/>

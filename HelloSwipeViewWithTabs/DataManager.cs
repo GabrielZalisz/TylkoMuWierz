@@ -39,7 +39,7 @@ namespace HelloSwipeViewWithTabs
             Songs.Add(new Song()
             {
                 Numer = 3,
-                Tytul = "Amazing Grace",
+                Tytul = "Amazing Grace ěščřžýżąę",
                 Tonacja = "G",
                 Slowa = @"Amazing grace! (how sweet the sound)
 That saved a wretch like me!
