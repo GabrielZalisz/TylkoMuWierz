@@ -3312,6 +3312,9 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f09015f
 			public const int Animation_Design_BottomSheetDialog = 2131296607;
 			
+			// aapt resource value: 0x7f090180
+			public const int AppTheme = 2131296640;
+			
 			// aapt resource value: 0x7f09009a
 			public const int Base_AlertDialog_AppCompat = 2131296410;
 			
