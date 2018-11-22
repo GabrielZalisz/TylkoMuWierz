@@ -47,8 +47,8 @@ namespace HelloSwipeViewWithTabs
             TextView tvNumer = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvNumer);
             tvNumer.Text = DataManager.SongsToDisplay[SongIndex].Numer.ToString();
 
-            TextView tvTonacja = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvTonacja);
-            tvTonacja.Text = DataManager.SongsToDisplay[SongIndex].Tonacja;
+            //TextView tvTonacja = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvTonacja);
+            //tvTonacja.Text = DataManager.SongsToDisplay[SongIndex].Tonacja;
 
             TextView tvSlowa = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvSlowa);
             tvSlowa.Text = DataManager.SongsToDisplay[SongIndex].Slowa;

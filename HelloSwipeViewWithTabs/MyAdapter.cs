@@ -27,10 +27,10 @@ namespace HelloSwipeViewWithTabs
             View v = LayoutInflater.From(MainActivity.MyContext).Inflate(Resource.Layout.list_item, null);
             TextView tvNumer = v.FindViewById<TextView>(Resource.Id.tvNumer);
             TextView tvTytul = v.FindViewById<TextView>(Resource.Id.tvTytul);
-            TextView tvTonacja = v.FindViewById<TextView>(Resource.Id.tvTonacja);
+            //TextView tvTonacja = v.FindViewById<TextView>(Resource.Id.tvTonacja);
             tvNumer.Text = (prvky[position] as Song).Numer.ToString();
             tvTytul.Text = (prvky[position] as Song).Tytul;
-            tvTonacja.Text = string.IsNullOrWhiteSpace((prvky[position] as Song).Tonacja) ? "" : "(" + (prvky[position] as Song).Tonacja + ")";
+            //tvTonacja.Text = string.IsNullOrWhiteSpace((prvky[position] as Song).Tonacja) ? "" : "(" + (prvky[position] as Song).Tonacja + ")";
             return v;
         }
     }
