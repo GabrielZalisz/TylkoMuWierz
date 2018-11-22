@@ -21,5 +21,9 @@ namespace HelloSwipeViewWithTabs
         public string Tonacja { get; set; }
 
         public string Slowa { get; set; }
+
+        public string Sekvence { get; set; }
+
+        public string BookReference { get; set; }
     }
 }

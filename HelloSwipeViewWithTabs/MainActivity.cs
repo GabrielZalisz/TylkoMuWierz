@@ -25,9 +25,9 @@ namespace HelloSwipeViewWithTabs
         {
             base.OnCreate(bundle);
 
-            DataManager.LoadSongs();
-
             MyContext = this.ApplicationContext;
+
+            DataManager.LoadSongs();
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.main);
