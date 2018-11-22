@@ -19,6 +19,7 @@ namespace HelloSwipeViewWithTabs
         public static ViewPager MyPager;
         public static ListView MyListView;
         public static MyAdapter<Song> MyAdapter;
+        public static FloatingActionButton MyFab;
 
         protected override void OnCreate(Bundle bundle)
         {

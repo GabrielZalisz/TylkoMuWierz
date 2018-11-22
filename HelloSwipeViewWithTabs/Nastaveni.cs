@@ -23,18 +23,11 @@ namespace HelloSwipeViewWithTabs
             set { _snackBar = value; }
         }
 
-        private static bool _red;
-
-        public static bool Red
-        {
-            get { return _red; }
-            set
-            {
-                _red = value;
-            }
-        }
+        public static bool Alphabetically { get; set; }
 
         public static int SongIndex { get; set; }
+
+        public static bool Red { get; set; }
 
         public static void SetView3()
         {

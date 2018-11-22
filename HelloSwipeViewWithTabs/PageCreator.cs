@@ -8,6 +8,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
+using Android.Support.V4.Content;
 using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
@@ -36,14 +37,33 @@ namespace HelloSwipeViewWithTabs
             var listView = v.FindViewById<ListView>(Resource.Id.listView1);
             Refresh(listView);
 
-            var btn123 = v.FindViewById<Button>(Resource.Id.btn123);
-            var btnABC = v.FindViewById<Button>(Resource.Id.btnABC);
+            //var btn123 = v.FindViewById<Button>(Resource.Id.btn123);
+            //var btnABC = v.FindViewById<Button>(Resource.Id.btnABC);
+            var fab = v.FindViewById<FloatingActionButton>(Resource.Id.fab);
 
-            btn123.Click += Btn123_Click;
-            btnABC.Click += BtnABC_Click;
+            //btn123.Click += Btn123_Click;
+            //btnABC.Click += BtnABC_Click;
+            fab.Click += Fab_Click;
 
+            MainActivity.MyFab = fab;
 
             return v;
+        }
+
+        private void Fab_Click(object sender, EventArgs e)
+        {
+            Nastaveni.Alphabetically = !Nastaveni.Alphabetically;
+            if (Nastaveni.Alphabetically)
+            {
+                MainActivity.MyFab.SetImageDrawable(ContextCompat.GetDrawable(c, Resource.Drawable.sort_by_numeric_order));
+                DataManager.Songs = DataManager.Songs.OrderBy(q => q.Tytul).ToList();
+            }
+            else
+            {
+                MainActivity.MyFab.SetImageDrawable(ContextCompat.GetDrawable(c, Resource.Drawable.sort_by_alphabet));
+                DataManager.Songs = DataManager.Songs.OrderBy(q => q.Numer).ToList();
+            }
+            Refresh(MainActivity.MyListView);
         }
 
         void Refresh(ListView listView)
