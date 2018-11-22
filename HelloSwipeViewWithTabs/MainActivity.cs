@@ -20,6 +20,7 @@ namespace HelloSwipeViewWithTabs
         public static ListView MyListView;
         public static MyAdapter<Song> MyAdapter;
         public static FloatingActionButton MyFab;
+        public static Android.Widget.SearchView MySearchView;
 
         protected override void OnCreate(Bundle bundle)
         {

@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\songbook_English.xml" />
+    <AndroidAsset Include="Assets\songbook_Tylko Mu Wierz.xml" />
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>

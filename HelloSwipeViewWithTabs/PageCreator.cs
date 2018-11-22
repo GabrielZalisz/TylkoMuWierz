@@ -37,17 +37,30 @@ namespace HelloSwipeViewWithTabs
             var listView = v.FindViewById<ListView>(Resource.Id.listView1);
             Refresh(listView);
 
-            //var btn123 = v.FindViewById<Button>(Resource.Id.btn123);
-            //var btnABC = v.FindViewById<Button>(Resource.Id.btnABC);
             var fab = v.FindViewById<FloatingActionButton>(Resource.Id.fab);
-
-            //btn123.Click += Btn123_Click;
-            //btnABC.Click += BtnABC_Click;
             fab.Click += Fab_Click;
-
             MainActivity.MyFab = fab;
 
+            var sv = v.FindViewById<SearchView>(Resource.Id.searchView1);
+            sv.QueryTextChange += Sv_QueryTextChange;
+            MainActivity.MySearchView = sv;
+
+
             return v;
+        }
+
+        private void Sv_QueryTextChange(object sender, SearchView.QueryTextChangeEventArgs e)
+        {
+            string query = MainActivity.MySearchView.Query.ToLower();
+            if (string.IsNullOrWhiteSpace(MainActivity.MySearchView.Query))
+            {
+                DataManager.SongsToDisplay = DataManager.Songs;
+            }
+            else
+            {
+                DataManager.SongsToDisplay = DataManager.Songs.Where(q => q.Tytul.ToLower().Contains(query) || q.Slowa.ToLower().Contains(query)).ToList();
+            }
+            Refresh(MainActivity.MyListView);
         }
 
         private void Fab_Click(object sender, EventArgs e)
@@ -56,37 +69,25 @@ namespace HelloSwipeViewWithTabs
             if (Nastaveni.Alphabetically)
             {
                 MainActivity.MyFab.SetImageDrawable(ContextCompat.GetDrawable(c, Resource.Drawable.sort_by_numeric_order));
-                DataManager.Songs = DataManager.Songs.OrderBy(q => q.Tytul).ToList();
+                DataManager.SongsToDisplay = DataManager.Songs.OrderBy(q => q.Tytul).ToList();
             }
             else
             {
                 MainActivity.MyFab.SetImageDrawable(ContextCompat.GetDrawable(c, Resource.Drawable.sort_by_alphabet));
-                DataManager.Songs = DataManager.Songs.OrderBy(q => q.Numer).ToList();
+                DataManager.SongsToDisplay = DataManager.Songs.OrderBy(q => q.Numer).ToList();
             }
             Refresh(MainActivity.MyListView);
         }
 
         void Refresh(ListView listView)
         {
-            MyAdapter<Song> adapter = new MyAdapter<Song>(c, Android.Resource.Layout.SimpleListItem1, DataManager.Songs);
+            MyAdapter<Song> adapter = new MyAdapter<Song>(c, Android.Resource.Layout.SimpleListItem1, DataManager.SongsToDisplay);
             if (MainActivity.MyAdapter != null)
                 MainActivity.MyAdapter.Clear();
             listView.Adapter = adapter;
             listView.ItemClick += ListView_ItemClick;
             MainActivity.MyAdapter = adapter;
             MainActivity.MyListView = listView;
-        }
-
-        private void Btn123_Click(object sender, EventArgs e)
-        {
-            DataManager.Songs = DataManager.Songs.OrderBy(q => q.Numer).ToList();
-            Refresh(MainActivity.MyListView);
-        }
-
-        private void BtnABC_Click(object sender, EventArgs e)
-        {
-            DataManager.Songs = DataManager.Songs.OrderBy(q => q.Tytul).ToList();
-            Refresh(MainActivity.MyListView);
         }
 
         public View CreatePage3(LayoutInflater inflater, ViewGroup container)

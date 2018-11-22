@@ -42,16 +42,16 @@ namespace HelloSwipeViewWithTabs
             {
                 tvTytul.SetTextColor(Color.Black);
             }
-            tvTytul.Text = DataManager.Songs[SongIndex].Tytul;
+            tvTytul.Text = DataManager.SongsToDisplay[SongIndex].Tytul;
 
             TextView tvNumer = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvNumer);
-            tvNumer.Text = DataManager.Songs[SongIndex].Numer.ToString();
+            tvNumer.Text = DataManager.SongsToDisplay[SongIndex].Numer.ToString();
 
             TextView tvTonacja = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvTonacja);
-            tvTonacja.Text = DataManager.Songs[SongIndex].Tonacja;
+            tvTonacja.Text = DataManager.SongsToDisplay[SongIndex].Tonacja;
 
             TextView tvSlowa = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvSlowa);
-            tvSlowa.Text = DataManager.Songs[SongIndex].Slowa;
+            tvSlowa.Text = DataManager.SongsToDisplay[SongIndex].Slowa;
         }
     }
 }

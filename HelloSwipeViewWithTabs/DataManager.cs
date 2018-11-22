@@ -20,11 +20,12 @@ namespace HelloSwipeViewWithTabs
         //public static string[] Songs = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
 
         public static IList<Song> Songs = new List<Song>();
+        public static IList<Song> SongsToDisplay = new List<Song>();
 
         public static void LoadSongs()
         {
             string songbook;
-            using (StreamReader sr = new StreamReader(MainActivity.MyContext.Assets.Open("songbook_English.xml")))
+            using (StreamReader sr = new StreamReader(MainActivity.MyContext.Assets.Open("songbook_Tylko Mu Wierz.xml")))
             {
                 songbook = sr.ReadToEnd();
             }
@@ -41,16 +42,8 @@ namespace HelloSwipeViewWithTabs
                                      Tonacja = song.Element("MusicKey").Value,
                                      BookReference = song.Element("BookReference").Value
 
-                                     //Id = Int32.Parse(song.Element("Id").Value),
-                                     //Parentid = Int32.Parse(song.Element("ParentId").Value),
                                      //Poradi = int.Parse(song.Element("Poradi").Value),
                                      //Barva = song.Element("Barva").Value,
-                                     //Nazev = song.Element("Nazev").Value,
-                                     //Popis = song.Element("Popis").Value,
-                                     //Obrazek = song.Element("Obrazek").Value,
-                                     //TypAplikace = song.Element("TypAplikace").Value,
-                                     //CestaAplikace = song.Element("CestaAplikace").Value,
-                                     //CestaAplikace2 = song.Element("CestaAplikace2").Value,
                                      //ExeAplikace = song.Element("ExeAplikace").Value,
                                      //ParametryAplikace = song.Element("ParametryAplikace").Value,
                                      //Identifikator = song.Element("Identifikator").Value,
@@ -61,18 +54,10 @@ namespace HelloSwipeViewWithTabs
                                      //IdeckoZastupce = song.Element("IdeckoZastupce").Value,
                                      //Poznamky = song.Element("Poznamky").Value,
                                      //Info1 = song.Element("Info1").Value,
-                                     //Info2 = song.Element("Info2").Value,
-                                     //Info3 = song.Element("Info3").Value,
-                                     //Info4 = song.Element("Info4").Value,
-                                     //Info5 = song.Element("Info5").Value,
-                                     //Info6 = song.Element("Info6").Value,
-                                     //Info7 = song.Element("Info7").Value,
-                                     //Info8 = song.Element("Info8").Value,
-                                     //Info9 = song.Element("Info9").Value,
-                                     //Info10 = song.Element("Info10").Value,
                                  };
 
-            Songs = piesni.ToList();
+            Songs = piesni.OrderBy(qq => qq.Numer).ToList();
+            SongsToDisplay = Songs;
             /*
 
 
