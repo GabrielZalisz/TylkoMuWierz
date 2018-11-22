@@ -36,7 +36,7 @@ namespace HelloSwipeViewWithTabs
             var piesni = from song in vstup
                                  select new Song
                                  {
-                                     Tytul = song.Element("Title1").Value,
+                                     Tytul = (song.Element("Title1").Value.IndexOf('(') > -1 ? song.Element("Title1").Value.Substring(0, song.Element("Title1").Value.IndexOf('(') - 1) : song.Element("Title1").Value),
                                      Numer = int.Parse(song.Element("SongNumber").Value),
                                      Slowa = song.Element("Contents").Value,
                                      Tonacja = song.Element("MusicKey").Value,
