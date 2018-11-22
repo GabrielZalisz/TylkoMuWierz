@@ -169,6 +169,8 @@
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\tmw3.jpg" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\sort_by_alphabet.png" />
+    <AndroidResource Include="Resources\drawable\sort_by_numeric_order.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -5,6 +5,6 @@
     android:textSize="12dp"
     android:textStyle="bold"
     android:textAllCaps="true"
-		android:fontFamily="serif"
     android:gravity="center"
+	  android:textColor="#ff000000"
     android:maxLines="1"/>

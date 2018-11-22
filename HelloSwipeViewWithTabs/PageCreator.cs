@@ -49,6 +49,8 @@ namespace HelloSwipeViewWithTabs
         void Refresh(ListView listView)
         {
             MyAdapter<Song> adapter = new MyAdapter<Song>(c, Android.Resource.Layout.SimpleListItem1, DataManager.Songs);
+            if (MainActivity.MyAdapter != null)
+                MainActivity.MyAdapter.Clear();
             listView.Adapter = adapter;
             listView.ItemClick += ListView_ItemClick;
             MainActivity.MyAdapter = adapter;

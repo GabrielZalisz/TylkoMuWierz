@@ -15,17 +15,17 @@
 		android:layout_marginRight="10dp"
 		android:id="@+id/linearLayout1">
 		<TextView
-			android:fontFamily="serif"
 			android:textSize="23dp"
 			android:text="123"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:layout_alignParentLeft="true"
 			android:id="@+id/tvNumer"
-			android:textColor="#ffe65100"
 			android:layout_gravity="left"/>
 		<TextView
-			android:fontFamily="serif"
+		android:layout_marginLeft="70dp"
+		android:layout_marginRight="10dp"
+			android:maxLines="1"
 			android:textStyle="bold"
 			android:textSize="23dp"
 			android:text="Amazing Grace"
@@ -36,13 +36,11 @@
 			android:layout_gravity="center"
 			android:layout_centerHorizontal="true" />
 		<TextView
-			android:fontFamily="serif"
 			android:textSize="23dp"
 			android:text="G"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/tvTonacja"
-			android:textColor="#ffe65100"
 			android:layout_alignParentRight="true"
 			android:layout_gravity="right" />
 	</RelativeLayout>
@@ -51,12 +49,11 @@
 		android:layout_height="1dp"
 		android:background="#ff000000"/>
 	<ScrollView
-           android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-           android:layout_weight="1"
-           android:fillViewport="true">
+		   android:layout_width="fill_parent"
+		   android:layout_height="wrap_content"
+		   android:layout_weight="1"
+		   android:fillViewport="true">
 	<TextView
-			android:fontFamily="serif"
 		android:text="111
 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222
 333\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444"
