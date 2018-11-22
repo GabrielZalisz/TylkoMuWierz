@@ -99,14 +99,97 @@ namespace HelloSwipeViewWithTabs
         public View CreatePage4(LayoutInflater inflater, ViewGroup container)
         {
             View v = inflater.Inflate(Resource.Layout.fragment_page_4, container, false);
-            var btn = v.FindViewById<Button>(Resource.Id.button1);
-            btn.Click += Btn_Click;
+
+            var btnMyBible = v.FindViewById<Button>(Resource.Id.btnMyBible);
+            btnMyBible.Click += BtnMyBible_Click;
+
+            //na zrušení
             var sw = v.FindViewById<Switch>(Resource.Id.switch1);
             sw.CheckedChange += Sw_CheckedChange;
             var sw1 = v.FindViewById<Switch>(Resource.Id.switch2);
             sw1.CheckedChange += Sw_CheckedChange1;
+            var btn = v.FindViewById<Button>(Resource.Id.button1);
+            btn.Click += Btn_Click;
+
+
+            var swChorusMany = v.FindViewById<Switch>(Resource.Id.swChorusMany);
+            swChorusMany.CheckedChange += SwChorusMany_CheckedChange;
+            var swBigFont = v.FindViewById<Switch>(Resource.Id.swBigFont);
+            swBigFont.CheckedChange += SwBigFont_CheckedChange;
+            var swCenter = v.FindViewById<Switch>(Resource.Id.swCenter);
+            swCenter.CheckedChange += SwCenter_CheckedChange;
+            var swLineBreaks = v.FindViewById<Switch>(Resource.Id.swLineBreaks);
+            swLineBreaks.CheckedChange += SwLineBreaks_CheckedChange;
+
             return v;
         }
+
+        private void SwChorusMany_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swChorusMany);
+            if (sw.Checked)
+            {
+                Nastaveni.ChorusMany = true;
+            }
+            else
+            {
+                Nastaveni.ChorusMany = false;
+            }
+        }
+
+        private void SwBigFont_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swBigFont);
+            if (sw.Checked)
+            {
+                Nastaveni.BigFont = true;
+            }
+            else
+            {
+                Nastaveni.BigFont = false;
+            }
+        }
+
+        private void SwCenter_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swCenter);
+            if (sw.Checked)
+            {
+                Nastaveni.Center = true;
+            }
+            else
+            {
+                Nastaveni.Center = false;
+            }
+        }
+
+        private void SwLineBreaks_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swLineBreaks);
+            if (sw.Checked)
+            {
+                Nastaveni.LineBreaks = true;
+            }
+            else
+            {
+                Nastaveni.LineBreaks = false;
+            }
+        }
+
+        private void BtnMyBible_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
+
+
+
+
+
+
 
         private void Sw_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
         {
@@ -134,9 +217,20 @@ namespace HelloSwipeViewWithTabs
             }
         }
 
+
+
+
+
+
+
+
+
+
+
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Nastaveni.SongIndex = e.Position;
+            MainActivity.MySearchView.OnActionViewCollapsed();
             MainActivity.MyPager.SetCurrentItem(2, true);
         }
 

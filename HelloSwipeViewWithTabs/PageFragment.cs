@@ -18,8 +18,6 @@ namespace HelloSwipeViewWithTabs
         public static View view3;
         public static View view4;
 
-        static bool red;
-
         PageCreator pc;
 
         public PageFragment()
@@ -44,8 +42,7 @@ namespace HelloSwipeViewWithTabs
         }
 
         public override void OnResume()
-        {
-            
+        {            
             base.OnResume();
         }
 

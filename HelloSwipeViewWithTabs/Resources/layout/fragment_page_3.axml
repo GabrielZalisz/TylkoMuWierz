@@ -69,7 +69,7 @@
 			android:textColor="#ff000000"
 			android:singleLine="false"
 			android:padding="10dp"
-			android:textSize="18dp"
+			android:textSize="17dp"
 	/>
 	 </ScrollView>
 	

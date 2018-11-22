@@ -22,6 +22,22 @@ namespace HelloSwipeViewWithTabs
         public static FloatingActionButton MyFab;
         public static Android.Widget.SearchView MySearchView;
 
+        public override void OnBackPressed()
+        {
+            switch (MainActivity.MyPager.CurrentItem)
+            {
+                case 3:
+                    MainActivity.MyPager.SetCurrentItem(2, true);
+                    break;
+                case 2:
+                    MainActivity.MyPager.SetCurrentItem(1, true);
+                    break;
+                default:
+                    base.OnBackPressed();
+                    break;
+            }
+        }
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
