@@ -19,7 +19,8 @@ namespace HelloSwipeViewWithTabs
     {
         //public static string[] Songs = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Test1", "Test2", "Test3", "Test4" };
 
-        public static IList<Song> Songs = new List<Song>();
+        public static IList<Song> AllSongs = new List<Song>();
+        public static IList<Song> Songbook = new List<Song>();
         public static IList<Song> SongsToDisplay = new List<Song>();
 
         public static void LoadSongs()
@@ -39,9 +40,10 @@ namespace HelloSwipeViewWithTabs
                                      Tytul = (song.Element("Title1").Value.IndexOf('(') > -1 ? song.Element("Title1").Value.Substring(0, song.Element("Title1").Value.IndexOf('(') - 1) : song.Element("Title1").Value),
                                      Numer = int.Parse(song.Element("SongNumber").Value),
                                      Slowa = song.Element("Contents").Value,
-                                     Tonacja = song.Element("MusicKey").Value,
+                                     Tonacja = song.Element("MusicKey").Value.EndsWith('m') ? song.Element("MusicKey").Value.Substring(0, 1).ToLower() : song.Element("MusicKey").Value,
                                      Sekvence = song.Element("Sequence").Value,
-                                     BookReference = song.Element("BookReference").Value
+                                     BookReference = song.Element("BookReference").Value,
+                                     Folder = song.Element("Folder").Value
 
                                      //Poradi = int.Parse(song.Element("Poradi").Value),
                                      //Barva = song.Element("Barva").Value,
@@ -57,8 +59,11 @@ namespace HelloSwipeViewWithTabs
                                      //Info1 = song.Element("Info1").Value,
                                  };
 
-            Songs = piesni.OrderBy(qq => qq.Numer).ToList();
-            SongsToDisplay = Songs;
+            AllSongs = piesni.OrderBy(qq => qq.Numer).ToList();
+
+            Songbook = AllSongs.Where(q => q.Folder == Nastaveni.SelectedFolder).ToList();
+            SongsToDisplay = Songbook;
+            Nastaveni.SelectedSong = SongsToDisplay.FirstOrDefault();
             /*
 
 

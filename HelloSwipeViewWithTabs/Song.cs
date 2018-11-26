@@ -116,5 +116,7 @@ namespace HelloSwipeViewWithTabs
         public string Sekvence { get; set; }
 
         public string BookReference { get; set; }
+
+        public string Folder { get; set; }
     }
 }

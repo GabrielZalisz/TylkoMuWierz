@@ -2429,11 +2429,17 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f07003d
 			public const int bottom = 2131165245;
 			
-			// aapt resource value: 0x7f07009b
-			public const int btnMyBible = 2131165339;
+			// aapt resource value: 0x7f07009d
+			public const int btnMlZp = 2131165341;
 			
 			// aapt resource value: 0x7f0700ac
-			public const int button1 = 2131165356;
+			public const int btnMyBible = 2131165356;
+			
+			// aapt resource value: 0x7f07009c
+			public const int btnPielgrzym = 2131165340;
+			
+			// aapt resource value: 0x7f07009b
+			public const int btnTMW = 2131165339;
 			
 			// aapt resource value: 0x7f070063
 			public const int buttonPanel = 2131165283;
@@ -2528,8 +2534,8 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f070072
 			public const int expanded_menu = 2131165298;
 			
-			// aapt resource value: 0x7f07009f
-			public const int fab = 2131165343;
+			// aapt resource value: 0x7f0700a1
+			public const int fab = 2131165345;
 			
 			// aapt resource value: 0x7f070050
 			public const int fill = 2131165264;
@@ -2588,8 +2594,8 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f070018
 			public const int line3 = 2131165208;
 			
-			// aapt resource value: 0x7f0700a0
-			public const int linearLayout1 = 2131165344;
+			// aapt resource value: 0x7f0700a2
+			public const int linearLayout1 = 2131165346;
 			
 			// aapt resource value: 0x7f070099
 			public const int linearLayout3 = 2131165337;
@@ -2597,8 +2603,8 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f07001d
 			public const int listMode = 2131165213;
 			
-			// aapt resource value: 0x7f07009e
-			public const int listView1 = 2131165342;
+			// aapt resource value: 0x7f0700a0
+			public const int listView1 = 2131165344;
 			
 			// aapt resource value: 0x7f070061
 			public const int list_item = 2131165281;
@@ -2675,8 +2681,8 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f0700b9
 			public const int right_side = 2131165369;
 			
-			// aapt resource value: 0x7f07009c
-			public const int rrr = 2131165340;
+			// aapt resource value: 0x7f07009e
+			public const int rrr = 2131165342;
 			
 			// aapt resource value: 0x7f07000c
 			public const int save_image_matrix = 2131165196;
@@ -2702,14 +2708,14 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f070068
 			public const int scrollView = 2131165288;
 			
-			// aapt resource value: 0x7f0700a4
-			public const int scrollViewSong = 2131165348;
+			// aapt resource value: 0x7f0700a6
+			public const int scrollViewSong = 2131165350;
 			
 			// aapt resource value: 0x7f070055
 			public const int scrollable = 2131165269;
 			
-			// aapt resource value: 0x7f07009d
-			public const int searchView1 = 2131165341;
+			// aapt resource value: 0x7f07009f
+			public const int searchView1 = 2131165343;
 			
 			// aapt resource value: 0x7f070080
 			public const int search_badge = 2131165312;
@@ -2798,23 +2804,17 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f070087
 			public const int submit_area = 2131165319;
 			
-			// aapt resource value: 0x7f0700a7
-			public const int swBigFont = 2131165351;
+			// aapt resource value: 0x7f0700aa
+			public const int swBigFont = 2131165354;
+			
+			// aapt resource value: 0x7f0700ab
+			public const int swCenter = 2131165355;
 			
 			// aapt resource value: 0x7f0700a8
-			public const int swCenter = 2131165352;
-			
-			// aapt resource value: 0x7f0700a6
-			public const int swChorusMany = 2131165350;
+			public const int swChorusMany = 2131165352;
 			
 			// aapt resource value: 0x7f0700a9
 			public const int swLineBreaks = 2131165353;
-			
-			// aapt resource value: 0x7f0700aa
-			public const int switch1 = 2131165354;
-			
-			// aapt resource value: 0x7f0700ab
-			public const int switch2 = 2131165355;
 			
 			// aapt resource value: 0x7f07001f
 			public const int tabMode = 2131165215;
@@ -2879,17 +2879,17 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f070013
 			public const int transition_transform = 2131165203;
 			
-			// aapt resource value: 0x7f0700a1
-			public const int tvNumer = 2131165345;
+			// aapt resource value: 0x7f0700a3
+			public const int tvNumer = 2131165347;
+			
+			// aapt resource value: 0x7f0700a7
+			public const int tvSlowa = 2131165351;
 			
 			// aapt resource value: 0x7f0700a5
-			public const int tvSlowa = 2131165349;
+			public const int tvTonacja = 2131165349;
 			
-			// aapt resource value: 0x7f0700a3
-			public const int tvTonacja = 2131165347;
-			
-			// aapt resource value: 0x7f0700a2
-			public const int tvTytul = 2131165346;
+			// aapt resource value: 0x7f0700a4
+			public const int tvTytul = 2131165348;
 			
 			// aapt resource value: 0x7f07009a
 			public const int tvTytul3 = 2131165338;

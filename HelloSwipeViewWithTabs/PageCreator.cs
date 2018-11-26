@@ -27,7 +27,39 @@ namespace HelloSwipeViewWithTabs
         public View CreatePage1(LayoutInflater inflater, ViewGroup container)
         {
             View v = inflater.Inflate(Resource.Layout.fragment_page_1, container, false);
+
+            var btnTMW = v.FindViewById<Button>(Resource.Id.btnTMW);
+            btnTMW.Click += BtnTMW_Click;
+            var btnPielgrzym = v.FindViewById<Button>(Resource.Id.btnPielgrzym);
+            btnPielgrzym.Click += BtnPielgrzym_Click;
+            var btnMlZp = v.FindViewById<Button>(Resource.Id.btnMlZp);
+            btnMlZp.Click += BtnMlZp_Click;
+
             return v;
+        }
+
+        private void BtnTMW_Click(object sender, EventArgs e)
+        {
+            Nastaveni.SelectedFolder = "Tylko Mu Wierz";
+            DataManager.Songbook = DataManager.AllSongs.Where(q => q.Folder == Nastaveni.SelectedFolder).ToList();
+            DataManager.SongsToDisplay = DataManager.Songbook;
+            MainActivity.MyPager.SetCurrentItem(1, true);
+        }
+
+        private void BtnPielgrzym_Click(object sender, EventArgs e)
+        {
+            Nastaveni.SelectedFolder = "Śpiewnik Pielgrzyma";
+            DataManager.Songbook = DataManager.AllSongs.Where(q => q.Folder == Nastaveni.SelectedFolder).ToList();
+            DataManager.SongsToDisplay = DataManager.Songbook;
+            MainActivity.MyPager.SetCurrentItem(1, true);
+        }
+
+        private void BtnMlZp_Click(object sender, EventArgs e)
+        {
+            Nastaveni.SelectedFolder = "Mládežnický zpěvník";
+            DataManager.Songbook = DataManager.AllSongs.Where(q => q.Folder == Nastaveni.SelectedFolder).ToList();
+            DataManager.SongsToDisplay = DataManager.Songbook;
+            MainActivity.MyPager.SetCurrentItem(1, true);
         }
 
         public View CreatePage2(LayoutInflater inflater, ViewGroup container)
@@ -35,7 +67,9 @@ namespace HelloSwipeViewWithTabs
             View v = inflater.Inflate(Resource.Layout.fragment_page_2, container, false);
 
             var listView = v.FindViewById<ListView>(Resource.Id.listView1);
-            Refresh(listView);
+            listView.ItemClick += ListView_ItemClick;
+            MainActivity.MyListView = listView;
+            RefreshListView();
 
             var fab = v.FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += Fab_Click;
@@ -54,13 +88,13 @@ namespace HelloSwipeViewWithTabs
             string query = MainActivity.MySearchView.Query.ToLower();
             if (string.IsNullOrWhiteSpace(MainActivity.MySearchView.Query))
             {
-                DataManager.SongsToDisplay = DataManager.Songs;
+                DataManager.SongsToDisplay = DataManager.Songbook;
             }
             else
             {
-                DataManager.SongsToDisplay = DataManager.Songs.Where(q => q.Tytul.ToLower().Contains(query) || q.Slowa.ToLower().Contains(query)).ToList();
+                DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Tytul.ToLower().Contains(query) || q.Slowa.ToLower().Contains(query)).ToList();
             }
-            Refresh(MainActivity.MyListView);
+            RefreshListView();
         }
 
         private void Fab_Click(object sender, EventArgs e)
@@ -69,25 +103,23 @@ namespace HelloSwipeViewWithTabs
             if (Nastaveni.Alphabetically)
             {
                 MainActivity.MyFab.SetImageDrawable(ContextCompat.GetDrawable(c, Resource.Drawable.sort_by_numeric_order));
-                DataManager.SongsToDisplay = DataManager.Songs.OrderBy(q => q.Tytul).ToList();
+                DataManager.SongsToDisplay = DataManager.Songbook.OrderBy(q => q.Tytul).ToList();
             }
             else
             {
                 MainActivity.MyFab.SetImageDrawable(ContextCompat.GetDrawable(c, Resource.Drawable.sort_by_alphabet));
-                DataManager.SongsToDisplay = DataManager.Songs.OrderBy(q => q.Numer).ToList();
+                DataManager.SongsToDisplay = DataManager.Songbook.OrderBy(q => q.Numer).ToList();
             }
-            Refresh(MainActivity.MyListView);
+            RefreshListView();
         }
 
-        void Refresh(ListView listView)
+        public static void RefreshListView()
         {
-            MyAdapter<Song> adapter = new MyAdapter<Song>(c, Android.Resource.Layout.SimpleListItem1, DataManager.SongsToDisplay);
+            MyAdapter<Song> adapter = new MyAdapter<Song>(MainActivity.MyContext, Android.Resource.Layout.SimpleListItem1, DataManager.SongsToDisplay);
             if (MainActivity.MyAdapter != null)
                 MainActivity.MyAdapter.Clear();
-            listView.Adapter = adapter;
-            listView.ItemClick += ListView_ItemClick;
+            MainActivity.MyListView.Adapter = adapter;
             MainActivity.MyAdapter = adapter;
-            MainActivity.MyListView = listView;
         }
 
         public View CreatePage3(LayoutInflater inflater, ViewGroup container)
@@ -108,12 +140,12 @@ namespace HelloSwipeViewWithTabs
             btnMyBible.Click += BtnMyBible_Click;
 
             //na zrušení
-            var sw = v.FindViewById<Switch>(Resource.Id.switch1);
-            sw.CheckedChange += Sw_CheckedChange;
-            var sw1 = v.FindViewById<Switch>(Resource.Id.switch2);
-            sw1.CheckedChange += Sw_CheckedChange1;
-            var btn = v.FindViewById<Button>(Resource.Id.button1);
-            btn.Click += Btn_Click;
+            //var sw = v.FindViewById<Switch>(Resource.Id.switch1);
+            //sw.CheckedChange += Sw_CheckedChange;
+            //var sw1 = v.FindViewById<Switch>(Resource.Id.switch2);
+            //sw1.CheckedChange += Sw_CheckedChange1;
+            //var btn = v.FindViewById<Button>(Resource.Id.button1);
+            //btn.Click += Btn_Click;
 
 
             var swChorusMany = v.FindViewById<Switch>(Resource.Id.swChorusMany);
@@ -182,70 +214,27 @@ namespace HelloSwipeViewWithTabs
 
         private void BtnMyBible_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var uri = Android.Net.Uri.Parse("https://play.google.com/store/apps/details?id=ua.mybible&hl=en");
+            var intent = new Intent(Intent.ActionView, uri);
+            Activity a = new Activity();
+            a.StartActivity(intent);
         }
-
-
-
-
-
-
-
-
-
-
-
-        private void Sw_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
-        {
-            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.switch1);
-            if (sw.Checked)
-            {
-                Nastaveni.SnackBar = true;
-            }
-            else
-            {
-                Nastaveni.SnackBar = false;
-            }
-        }
-
-        private void Sw_CheckedChange1(object sender, CompoundButton.CheckedChangeEventArgs e)
-        {
-            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.switch2);
-            if (sw.Checked)
-            {
-                Nastaveni.Red = true;
-            }
-            else
-            {
-                Nastaveni.Red = false;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Nastaveni.SongIndex = e.Position;
-            MainActivity.MySearchView.OnActionViewCollapsed();
+            Nastaveni.SelectedSong = DataManager.SongsToDisplay[e.Position];
             MainActivity.MyScrollView.ScrollTo(0, 0);
             MainActivity.MyPager.SetCurrentItem(2, true);
+            MainActivity.MySearchView.OnActionViewCollapsed();
         }
 
-        private void Btn_Click(object sender, EventArgs e)
-        {
-            View view = (View)sender;
-            if (Nastaveni.SnackBar)
-                Snackbar.Make(view, "Klik", Snackbar.LengthLong).SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-            else
-                Toast.MakeText(c, "Klik!", ToastLength.Short).Show();
-        }
+        //private void Btn_Click(object sender, EventArgs e)
+        //{
+        //    View view = (View)sender;
+        //    if (Nastaveni.SnackBar)
+        //        Snackbar.Make(view, "Klik", Snackbar.LengthLong).SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+        //    else
+        //        Toast.MakeText(c, "Klik!", ToastLength.Short).Show();
+        //}
     }
 }

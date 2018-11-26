@@ -25,11 +25,18 @@ namespace HelloSwipeViewWithTabs
 
         //view3
 
-        public static int SongIndex { get; set; }
+        public static Song SelectedSong { get; set; }
         public static bool Center { get; set; }
         public static bool BigFont { get; set; }//small=17dp, big=21dp
         public static bool ChorusMany { get; set; }
         public static bool NoLineBreaks { get; set; }
+        private static string _folder = "Tylko Mu Wierz";
+
+        public static string SelectedFolder
+        {
+            get { return _folder; }
+            set { _folder = value; }
+        }
 
 
 
@@ -41,8 +48,19 @@ namespace HelloSwipeViewWithTabs
 
 
 
+        static string last_songbook;
 
+        public static void SetView2()
+        {
+            if (PageFragment.view2 == null)
+                return;
 
+            if (SelectedFolder != last_songbook)
+            {
+                PageCreator.RefreshListView();
+                last_songbook = SelectedFolder;
+            }
+        }
 
 
         public static void SetView3()
@@ -50,25 +68,23 @@ namespace HelloSwipeViewWithTabs
             if (PageFragment.view3 == null)
                 return;
 
+            if (Nastaveni.SelectedSong == null)
+            {
+                Toast.MakeText(MainActivity.MyContext, "Błąd!", ToastLength.Short).Show();
+                return;
+            }
+
             TextView tvTytul = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvTytul);
-            tvTytul.Text = DataManager.SongsToDisplay[SongIndex].Tytul;
-            //if (Red)
-            //{
-            //    tvTytul.SetTextColor(Color.Red);
-            //}
-            //else
-            //{
-            //    tvTytul.SetTextColor(Color.Black);
-            //}
+            tvTytul.Text = Nastaveni.SelectedSong.Tytul;
 
             TextView tvNumer = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvNumer);
-            tvNumer.Text = DataManager.SongsToDisplay[SongIndex].Numer.ToString();
+            tvNumer.Text = Nastaveni.SelectedSong.Numer.ToString();
 
             TextView tvTonacja = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvTonacja);
-            tvTonacja.Text = DataManager.SongsToDisplay[SongIndex].Tonacja;
+            tvTonacja.Text = Nastaveni.SelectedSong.Tonacja;
 
             TextView tvSlowa = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvSlowa);
-            tvSlowa.Text = DataManager.SongsToDisplay[SongIndex].SlowaToDisplay;
+            tvSlowa.Text = Nastaveni.SelectedSong.SlowaToDisplay;
 
             if (Nastaveni.Center)
                 tvSlowa.Gravity = GravityFlags.CenterHorizontal;
