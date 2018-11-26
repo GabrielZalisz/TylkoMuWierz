@@ -29,7 +29,7 @@ namespace HelloSwipeViewWithTabs
         public static bool Center { get; set; }
         public static bool BigFont { get; set; }//small=17dp, big=21dp
         public static bool ChorusMany { get; set; }
-        public static bool LineBreaks { get; set; }
+        public static bool NoLineBreaks { get; set; }
 
 
 
@@ -68,7 +68,7 @@ namespace HelloSwipeViewWithTabs
             tvTonacja.Text = DataManager.SongsToDisplay[SongIndex].Tonacja;
 
             TextView tvSlowa = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvSlowa);
-            tvSlowa.Text = DataManager.SongsToDisplay[SongIndex].Slowa;
+            tvSlowa.Text = DataManager.SongsToDisplay[SongIndex].SlowaToDisplay;
 
             if (Nastaveni.Center)
                 tvSlowa.Gravity = GravityFlags.CenterHorizontal;

@@ -40,6 +40,7 @@ namespace HelloSwipeViewWithTabs
                                      Numer = int.Parse(song.Element("SongNumber").Value),
                                      Slowa = song.Element("Contents").Value,
                                      Tonacja = song.Element("MusicKey").Value,
+                                     Sekvence = song.Element("Sequence").Value,
                                      BookReference = song.Element("BookReference").Value
 
                                      //Poradi = int.Parse(song.Element("Poradi").Value),

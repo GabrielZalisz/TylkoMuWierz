@@ -93,6 +93,10 @@ namespace HelloSwipeViewWithTabs
         public View CreatePage3(LayoutInflater inflater, ViewGroup container)
         {
             View v = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
+
+            var scrlv = v.FindViewById<ScrollView>(Resource.Id.scrollViewSong);
+            MainActivity.MyScrollView = scrlv;
+
             return v;
         }
 
@@ -168,11 +172,11 @@ namespace HelloSwipeViewWithTabs
             var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swLineBreaks);
             if (sw.Checked)
             {
-                Nastaveni.LineBreaks = true;
+                Nastaveni.NoLineBreaks = true;
             }
             else
             {
-                Nastaveni.LineBreaks = false;
+                Nastaveni.NoLineBreaks = false;
             }
         }
 
@@ -231,6 +235,7 @@ namespace HelloSwipeViewWithTabs
         {
             Nastaveni.SongIndex = e.Position;
             MainActivity.MySearchView.OnActionViewCollapsed();
+            MainActivity.MyScrollView.ScrollTo(0, 0);
             MainActivity.MyPager.SetCurrentItem(2, true);
         }
 

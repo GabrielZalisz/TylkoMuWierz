@@ -21,6 +21,7 @@ namespace HelloSwipeViewWithTabs
         public static MyAdapter<Song> MyAdapter;
         public static FloatingActionButton MyFab;
         public static Android.Widget.SearchView MySearchView;
+        public static ScrollView MyScrollView;
 
         public override void OnBackPressed()
         {
@@ -30,6 +31,9 @@ namespace HelloSwipeViewWithTabs
                     MainActivity.MyPager.SetCurrentItem(2, true);
                     break;
                 case 2:
+                    MainActivity.MyPager.SetCurrentItem(1, true);
+                    break;
+                case 0:
                     MainActivity.MyPager.SetCurrentItem(1, true);
                     break;
                 default:

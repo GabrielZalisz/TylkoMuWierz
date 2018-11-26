@@ -55,6 +55,7 @@
 		android:layout_height="1dp"
 		android:background="#ff000000"/>
 	<ScrollView
+		   android:id="@+id/scrollViewSong"
 		   android:layout_width="fill_parent"
 		   android:layout_height="wrap_content"
 		   android:layout_weight="1"
