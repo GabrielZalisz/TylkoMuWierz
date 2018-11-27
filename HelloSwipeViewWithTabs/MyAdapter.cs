@@ -24,15 +24,15 @@ namespace HelloSwipeViewWithTabs
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             //return base.GetView(position, convertView, parent);
-            View v = LayoutInflater.From(MainActivity.MyContext).Inflate(Resource.Layout.list_item, null);
+            View v = LayoutInflater.From(MainActivity.MyContext).Inflate(Resource.Layout.pokus2, null);
             TextView tvNumer = v.FindViewById<TextView>(Resource.Id.tvNumer);
             TextView tvTytul = v.FindViewById<TextView>(Resource.Id.tvTytul);
-            //TextView tvTonacja = v.FindViewById<TextView>(Resource.Id.tvTonacja);
+            TextView tvTonacja = v.FindViewById<TextView>(Resource.Id.tvTonacja);
             tvNumer.Text = (prvky[position] as Song).Numer.ToString();
             string tytul_dur = (prvky[position] as Song).Tytul;
-            tytul_dur += string.IsNullOrWhiteSpace((prvky[position] as Song).Tonacja) ? "" : " (" + (prvky[position] as Song).Tonacja + ")";
+            //tytul_dur += string.IsNullOrWhiteSpace((prvky[position] as Song).Tonacja) ? "" : " (" + (prvky[position] as Song).Tonacja + ")";
             tvTytul.Text = tytul_dur;
-            //tvTonacja.Text = string.IsNullOrWhiteSpace((prvky[position] as Song).Tonacja) ? "" : "(" + (prvky[position] as Song).Tonacja + ")";
+            tvTonacja.Text = (prvky[position] as Song).Tonacja;
             return v;
         }
     }

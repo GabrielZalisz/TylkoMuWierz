@@ -2429,6 +2429,15 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f07003d
 			public const int bottom = 2131165245;
 			
+			// aapt resource value: 0x7f0700c2
+			public const int btnButton1 = 2131165378;
+			
+			// aapt resource value: 0x7f0700c3
+			public const int btnButton2 = 2131165379;
+			
+			// aapt resource value: 0x7f0700c4
+			public const int btnButton3 = 2131165380;
+			
 			// aapt resource value: 0x7f07009d
 			public const int btnMlZp = 2131165341;
 			
@@ -2437,6 +2446,9 @@ namespace HelloSwipeViewWithTabs
 			
 			// aapt resource value: 0x7f07009c
 			public const int btnPielgrzym = 2131165340;
+			
+			// aapt resource value: 0x7f0700c7
+			public const int btnSubmit = 2131165383;
 			
 			// aapt resource value: 0x7f07009b
 			public const int btnTMW = 2131165339;
@@ -2509,6 +2521,9 @@ namespace HelloSwipeViewWithTabs
 			
 			// aapt resource value: 0x7f070020
 			public const int disableHome = 2131165216;
+			
+			// aapt resource value: 0x7f0700c6
+			public const int editText1 = 2131165382;
 			
 			// aapt resource value: 0x7f07007e
 			public const int edit_query = 2131165310;
@@ -2609,14 +2624,14 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f070061
 			public const int list_item = 2131165281;
 			
-			// aapt resource value: 0x7f0700c4
-			public const int masked = 2131165380;
+			// aapt resource value: 0x7f0700cc
+			public const int masked = 2131165388;
 			
 			// aapt resource value: 0x7f0700b5
 			public const int media_actions = 2131165365;
 			
-			// aapt resource value: 0x7f0700c2
-			public const int message = 2131165378;
+			// aapt resource value: 0x7f0700ca
+			public const int message = 2131165386;
 			
 			// aapt resource value: 0x7f070031
 			public const int middle = 2131165233;
@@ -2819,6 +2834,12 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f07001f
 			public const int tabMode = 2131165215;
 			
+			// aapt resource value: 0x7f0700c8
+			public const int tableLayout1 = 2131165384;
+			
+			// aapt resource value: 0x7f0700c9
+			public const int tableRow1 = 2131165385;
+			
 			// aapt resource value: 0x7f070019
 			public const int tag_transition_group = 2131165209;
 			
@@ -2833,6 +2854,9 @@ namespace HelloSwipeViewWithTabs
 			
 			// aapt resource value: 0x7f070069
 			public const int textSpacerNoTitle = 2131165289;
+			
+			// aapt resource value: 0x7f0700c5
+			public const int textView1 = 2131165381;
 			
 			// aapt resource value: 0x7f070098
 			public const int text_input_password_toggle = 2131165336;
@@ -2906,8 +2930,8 @@ namespace HelloSwipeViewWithTabs
 			// aapt resource value: 0x7f070016
 			public const int view_offset_helper = 2131165206;
 			
-			// aapt resource value: 0x7f0700c3
-			public const int visible = 2131165379;
+			// aapt resource value: 0x7f0700cb
+			public const int visible = 2131165387;
 			
 			// aapt resource value: 0x7f07003c
 			public const int withText = 2131165244;
@@ -3161,19 +3185,25 @@ namespace HelloSwipeViewWithTabs
 			public const int notification_template_part_time = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int select_dialog_item_material = 2130903103;
+			public const int pokus = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int select_dialog_multichoice_material = 2130903104;
+			public const int pokus2 = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int select_dialog_singlechoice_material = 2130903105;
+			public const int select_dialog_item_material = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int support_simple_spinner_dropdown_item = 2130903106;
+			public const int select_dialog_multichoice_material = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int tooltip = 2130903107;
+			public const int select_dialog_singlechoice_material = 2130903107;
+			
+			// aapt resource value: 0x7f030044
+			public const int support_simple_spinner_dropdown_item = 2130903108;
+			
+			// aapt resource value: 0x7f030045
+			public const int tooltip = 2130903109;
 			
 			static Layout()
 			{
