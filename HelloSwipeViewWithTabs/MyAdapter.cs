@@ -29,7 +29,9 @@ namespace HelloSwipeViewWithTabs
             TextView tvTytul = v.FindViewById<TextView>(Resource.Id.tvTytul);
             //TextView tvTonacja = v.FindViewById<TextView>(Resource.Id.tvTonacja);
             tvNumer.Text = (prvky[position] as Song).Numer.ToString();
-            tvTytul.Text = (prvky[position] as Song).Tytul;
+            string tytul_dur = (prvky[position] as Song).Tytul;
+            tytul_dur += string.IsNullOrWhiteSpace((prvky[position] as Song).Tonacja) ? "" : " (" + (prvky[position] as Song).Tonacja + ")";
+            tvTytul.Text = tytul_dur;
             //tvTonacja.Text = string.IsNullOrWhiteSpace((prvky[position] as Song).Tonacja) ? "" : "(" + (prvky[position] as Song).Tonacja + ")";
             return v;
         }

@@ -16,6 +16,7 @@ namespace HelloSwipeViewWithTabs
     public class MainActivity : AppCompatActivity
     {
         public static Context MyContext;
+        public static Activity MyActivity;
         public static ViewPager MyPager;
         public static ListView MyListView;
         public static MyAdapter<Song> MyAdapter;
@@ -47,6 +48,8 @@ namespace HelloSwipeViewWithTabs
             base.OnCreate(bundle);
 
             MyContext = this.ApplicationContext;
+
+            MyActivity = this;
 
             DataManager.LoadSongs();
 

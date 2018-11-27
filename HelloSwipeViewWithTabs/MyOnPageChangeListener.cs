@@ -30,6 +30,7 @@ namespace HelloSwipeViewWithTabs
             switch (position)
             {
                 case 0:
+                    Nastaveni.SetView1();
                     break;
                 case 1:
                     Nastaveni.SetView2();

@@ -46,7 +46,13 @@ namespace HelloSwipeViewWithTabs
 
 
 
+        public static void SetView1()
+        {
+            if (PageFragment.view1 == null)
+                return;
 
+            MainActivity.MySearchView.OnActionViewCollapsed();
+        }
 
         static string last_songbook;
 
@@ -92,9 +98,9 @@ namespace HelloSwipeViewWithTabs
                 tvSlowa.Gravity = GravityFlags.NoGravity;
 
             if (Nastaveni.BigFont)
-                tvSlowa.SetTextSize(Android.Util.ComplexUnitType.Dip, 21);
+                tvSlowa.SetTextSize(Android.Util.ComplexUnitType.Dip, 22);
             else
-                tvSlowa.SetTextSize(Android.Util.ComplexUnitType.Dip, 17);
+                tvSlowa.SetTextSize(Android.Util.ComplexUnitType.Dip, 18);
         }
     }
 }

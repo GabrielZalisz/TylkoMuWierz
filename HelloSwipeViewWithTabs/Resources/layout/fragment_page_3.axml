@@ -62,17 +62,13 @@
 		   android:layout_weight="1"
 		   android:fillViewport="true">
 		<TextView
-			android:text="111
-222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222 222
-333\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444\n444"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/tvSlowa"
 			android:textColor="#ff000000"
 			android:singleLine="false"
 			android:padding="10dp"
-			android:textSize="17dp"
-	/>
+			android:textSize="18dp" />
 	 </ScrollView>
 	
 </LinearLayout>

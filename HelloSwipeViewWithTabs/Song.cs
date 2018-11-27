@@ -26,6 +26,20 @@ namespace HelloSwipeViewWithTabs
         {
             get
             {
+                if (!(Slowa.Contains("[1]") || Slowa.Contains("[chorus]")))
+                {
+                    if (Nastaveni.NoLineBreaks)
+                    {
+                        string[] items = Slowa.Trim().Split("\n\n");
+                        List<string> nlb = new List<string>();
+                        items.ToList().ForEach(q => nlb.Add(q.Replace("\n", " ").Replace("  ", " ").Replace("  ", " ")));
+                        return string.Join("\n\n", nlb);
+                    }
+                    else
+                    {
+                        return Slowa.Trim().Replace("  ", " ");
+                    }
+                }
                 bool contains_chorus = Slowa.Contains("chorus");
                 string ret = Slowa.Trim();
                 ret = ret.Replace("  ", " ")

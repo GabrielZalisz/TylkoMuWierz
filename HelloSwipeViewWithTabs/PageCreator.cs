@@ -92,7 +92,7 @@ namespace HelloSwipeViewWithTabs
             }
             else
             {
-                DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Tytul.ToLower().Contains(query) || q.Slowa.ToLower().Contains(query)).ToList();
+                DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Tytul.ToLower().Contains(query) || q.Slowa.Replace("\n", " ").Replace("  ", " ").ToLower().Contains(query)).ToList();
             }
             RefreshListView();
         }
@@ -216,8 +216,7 @@ namespace HelloSwipeViewWithTabs
         {
             var uri = Android.Net.Uri.Parse("https://play.google.com/store/apps/details?id=ua.mybible&hl=en");
             var intent = new Intent(Intent.ActionView, uri);
-            Activity a = new Activity();
-            a.StartActivity(intent);
+            MainActivity.MyActivity.StartActivity(intent);
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
