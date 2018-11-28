@@ -173,10 +173,16 @@
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\drawable\sort_by_alphabet.png" />
     <AndroidResource Include="Resources\drawable\sort_by_numeric_order.png" />
-    <AndroidResource Include="Resources\layout\pokus.axml">
+    <AndroidResource Include="Resources\layout\list_item_new.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\pokus2.axml">
+    <AndroidResource Include="Resources\layout\fragment_page_3_new.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\prechod.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\pokusss.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

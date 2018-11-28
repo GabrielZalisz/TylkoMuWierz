@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<ScrollView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/scrollViewSong" >
+		<LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/linearLayout1" >
+		
+		<TableLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/tableLayout1"
+		android:stretchColumns="1"
+		android:shrinkColumns="1">
+		<TableRow
+			android:id="@+id/tableRow1">
+			<TextView
+				android:textSize="20dp"
+				android:typeface="serif"
+				android:paddingHorizontal="5dp"
+				android:textColor="#ff000000"
+				android:gravity="center"
+				android:text="444"
+				android:id="@+id/tvNumer" />
+			<TextView
+				android:textSize="20dp"
+				android:singleLine="false"
+				android:text="ag hafjgh afjgh af af dfasdasdjhadf"
+				android:typeface="serif"
+				android:padding="5dp"
+				android:textStyle="bold"
+				android:textColor="#ff000000"
+				android:gravity="center"
+				android:id="@+id/tvTytul" />
+			<TextView
+				android:textSize="20dp"
+				android:typeface="serif"
+				android:textColor="#ff000000"
+				android:gravity="center"
+				android:text="D"
+				android:paddingHorizontal="5dp"
+				android:id="@+id/tvTonacja" />
+			</TableRow>
+		
+	</TableLayout>
+	<View
+		android:layout_width="fill_parent"
+		android:layout_height="1dp"
+		android:background="#ff000000"/>
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvSlowa"
+				android:textColor="#ff000000"
+				android:singleLine="false"
+				android:padding="10dp"
+				android:textSize="18dp" />
+		
+		</LinearLayout>
+		
+		
+
+	</ScrollView>
+
+</LinearLayout>

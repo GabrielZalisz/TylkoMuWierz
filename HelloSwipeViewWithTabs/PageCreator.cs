@@ -124,7 +124,7 @@ namespace HelloSwipeViewWithTabs
 
         public View CreatePage3(LayoutInflater inflater, ViewGroup container)
         {
-            View v = inflater.Inflate(Resource.Layout.fragment_page_3, container, false);
+            View v = inflater.Inflate(Resource.Layout.fragment_page_3_new, container, false);
 
             var scrlv = v.FindViewById<ScrollView>(Resource.Id.scrollViewSong);
             MainActivity.MyScrollView = scrlv;

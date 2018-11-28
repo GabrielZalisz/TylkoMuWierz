@@ -25,8 +25,7 @@
 			<TextView
 				android:textSize="20dp"
 				android:singleLine="false"
-				android:text="ag hafjgh afjgh af af df
-asdasdjhadf"
+				android:text="ag hafjgh afjgh af af dfasdasdjhadf"
 				android:typeface="serif"
 				android:padding="5dp"
 				android:textColor="#ff000000"
@@ -35,10 +34,12 @@ asdasdjhadf"
 			<TextView
 				android:textSize="20dp"
 				android:typeface="serif"
-				android:padding="5dp"
 				android:textColor="#ff000000"
 				android:layout_gravity="center"
-				android:text="Ddd"
+				android:gravity="center"
+				android:text="D"
+				android:minWidth="35dp"
+				android:paddingRight="5dp"
 				android:id="@+id/tvTonacja" />
 			</TableRow>
 		
