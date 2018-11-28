@@ -13,15 +13,17 @@
 		<TableRow
 			android:id="@+id/tableRow1">
 			<TextView
+				android:textSize="20dp"
 				android:minWidth="50dp"
 				android:typeface="serif"
-				android:padding="5dp"
+				android:paddingHorizontal="5dp"
 				android:textColor="#ff000000"
 				android:layout_gravity="center"
 				android:gravity="center"
 				android:text="444"
 				android:id="@+id/tvNumer" />
 			<TextView
+				android:textSize="20dp"
 				android:singleLine="false"
 				android:text="ag hafjgh afjgh af af df
 asdasdjhadf"
@@ -31,6 +33,7 @@ asdasdjhadf"
 				android:gravity="left"
 				android:id="@+id/tvTytul" />
 			<TextView
+				android:textSize="20dp"
 				android:typeface="serif"
 				android:padding="5dp"
 				android:textColor="#ff000000"

@@ -22,6 +22,19 @@ namespace HelloSwipeViewWithTabs
         public static IList<Song> AllSongs = new List<Song>();
         public static IList<Song> Songbook = new List<Song>();
         public static IList<Song> SongsToDisplay = new List<Song>();
+		
+		static string GetNormalTitle(string title, string obsah)
+		{
+			string tytul_bez_duru = (title.IndexOf('(') > -1 ? title.Substring(0, title.IndexOf('(') - 1) : title).Trim();
+			if (obsah.ToLower().Contains(tytul_bez_duru.ToLower()))
+			{
+				return obsah.Substring(obsah.ToLower().IndexOf(tytul_bez_duru.ToLower()), tytul_bez_duru.Length);
+			}
+			else
+			{
+				return tytul_bez_duru;
+			}
+		}
 
         public static void LoadSongs()
         {
@@ -37,7 +50,7 @@ namespace HelloSwipeViewWithTabs
             var piesni = from song in vstup
                                  select new Song
                                  {
-                                     Tytul = (song.Element("Title1").Value.IndexOf('(') > -1 ? song.Element("Title1").Value.Substring(0, song.Element("Title1").Value.IndexOf('(') - 1) : song.Element("Title1").Value),
+                                     Tytul = GetNormalTitle(song.Element("Title1").Value, song.Element("Contents").Value),
                                      Numer = int.Parse(song.Element("SongNumber").Value),
                                      Slowa = song.Element("Contents").Value,
                                      Tonacja = song.Element("MusicKey").Value.EndsWith('m') ? song.Element("MusicKey").Value.Substring(0, 1).ToLower() : song.Element("MusicKey").Value,
