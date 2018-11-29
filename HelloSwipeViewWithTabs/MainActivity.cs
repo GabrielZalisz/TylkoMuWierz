@@ -12,7 +12,7 @@ using static Android.Support.V4.View.ViewPager;
 
 namespace HelloSwipeViewWithTabs
 {
-    [Activity(Label = "Tylko Mu Wierz", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Tylko Mu Wierz", MainLauncher = true, Icon = "@mipmap/ic_launcher")]
     public class MainActivity : AppCompatActivity
     {
         public static Context MyContext;
