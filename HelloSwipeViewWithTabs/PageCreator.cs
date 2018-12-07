@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.Content;
 using Android.Support.V4.View;
+using Android.Text;
+using Android.Text.Method;
 using Android.Views;
 using Android.Widget;
 
@@ -138,6 +140,15 @@ namespace HelloSwipeViewWithTabs
 
             var btnMyBible = v.FindViewById<Button>(Resource.Id.btnMyBible);
             btnMyBible.Click += BtnMyBible_Click;
+            
+            var btnRadio = v.FindViewById<Button>(Resource.Id.btnRadio);
+            btnRadio.Click += BtnRadio_Click;
+
+            //TextView textView = v.FindViewById<TextView>(Resource.Id.tvGitHub);
+            //textView.Clickable = true;
+            //textView.MovementMethod = LinkMovementMethod.Instance;
+            //string text = "<a href='https://github.com/gabzdyl/test_songbook'>GitHub</a>";
+            //textView.SetText("GitHub", TextView.BufferType.Normal);
 
             //na zrušení
             //var sw = v.FindViewById<Switch>(Resource.Id.switch1);
@@ -215,6 +226,13 @@ namespace HelloSwipeViewWithTabs
         private void BtnMyBible_Click(object sender, EventArgs e)
         {
             var uri = Android.Net.Uri.Parse("https://play.google.com/store/apps/details?id=ua.mybible&hl=en");
+            var intent = new Intent(Intent.ActionView, uri);
+            MainActivity.MyActivity.StartActivity(intent);
+        }
+
+        private void BtnRadio_Click(object sender, EventArgs e)
+        {
+            var uri = Android.Net.Uri.Parse("http://radio.zapraszamy.pl/");
             var intent = new Intent(Intent.ActionView, uri);
             MainActivity.MyActivity.StartActivity(intent);
         }

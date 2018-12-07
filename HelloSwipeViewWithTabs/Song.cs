@@ -70,6 +70,7 @@ namespace HelloSwipeViewWithTabs
                 ret = ret.Replace("[15]\n", "\n15. ");
                 ret = ret.Replace("[chorus]\n", "\nR. ");
                 ret = ret.Replace("[bridge]\n", "\nB. ");
+                ret = ret.Replace("[chorus 2]\n", "\nR2. ");
                 ret = ret.Trim();
 
                 if (Nastaveni.NoLineBreaks)
@@ -120,10 +121,11 @@ namespace HelloSwipeViewWithTabs
                         .Replace("13. ", "13.\n")
                         .Replace("14. ", "14.\n")
                         .Replace("15. ", "15.\n")
-                        .Replace("R. ", "R.\n");
+                        .Replace("R. ", "R.\n")
+                        .Replace("R2. ", "R2.\n");
                 }
 
-                return ret.Replace("B. ", "").Trim();
+                return ret.Replace("B. ", "").Replace("R2", "R").Trim();
             }
         }
 
