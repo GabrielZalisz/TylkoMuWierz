@@ -79,6 +79,8 @@ namespace HelloSwipeViewWithTabs
 
             var sv = v.FindViewById<SearchView>(Resource.Id.searchView1);
             sv.QueryTextChange += Sv_QueryTextChange;
+            //sv.SetIconifiedByDefault(true);
+            //sv.SetQueryHint("Szukaj...");
             MainActivity.MySearchView = sv;
 
 
