@@ -76,7 +76,7 @@
 			<View
 				android:layout_alignParentBottom="true"
 				android:layout_width="fill_parent"
-				android:layout_height="3dp"
+				android:layout_height="5dp"
 				android:background="@drawable/prechod_opacny"/>
 			
 			<android.support.design.widget.FloatingActionButton

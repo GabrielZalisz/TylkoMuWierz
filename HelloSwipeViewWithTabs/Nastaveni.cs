@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
+using Android.Preferences;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -15,9 +16,7 @@ namespace HelloSwipeViewWithTabs
 {
     static class Nastaveni
     {
-        //na zrušení
-        public static bool SnackBar { get; set; }
-        public static bool Red { get; set; }
+        //dočasné
 
         //view2
 
@@ -101,6 +100,20 @@ namespace HelloSwipeViewWithTabs
                 tvSlowa.SetTextSize(Android.Util.ComplexUnitType.Dip, 22);
             else
                 tvSlowa.SetTextSize(Android.Util.ComplexUnitType.Dip, 18);
+        }
+
+        public static void SaveSetting(string key, bool value)
+        {
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(MainActivity.MyContext);
+            ISharedPreferencesEditor editor = prefs.Edit();
+            editor.PutBoolean(key, value);
+            editor.Apply();
+        }
+
+        public static bool GetSetting(string key)
+        {
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(MainActivity.MyContext);
+            return prefs.GetBoolean(key, false);
         }
     }
 }

@@ -51,6 +51,11 @@ namespace HelloSwipeViewWithTabs
 
             MyActivity = this;
 
+            Nastaveni.ChorusMany = Nastaveni.GetSetting("ChorusMany");
+            Nastaveni.Center = Nastaveni.GetSetting("Center");
+            Nastaveni.BigFont = Nastaveni.GetSetting("BigFont");
+            Nastaveni.NoLineBreaks = Nastaveni.GetSetting("NoLineBreaks");
+
             DataManager.LoadSongs();
 
             // Set our view from the "main" layout resource

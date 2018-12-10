@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -83,7 +82,6 @@ namespace HelloSwipeViewWithTabs
             //sv.SetQueryHint("Szukaj...");
             MainActivity.MySearchView = sv;
 
-
             return v;
         }
 
@@ -162,12 +160,23 @@ namespace HelloSwipeViewWithTabs
 
 
             var swChorusMany = v.FindViewById<Switch>(Resource.Id.swChorusMany);
+            if (Nastaveni.ChorusMany)
+                swChorusMany.Checked = true;
             swChorusMany.CheckedChange += SwChorusMany_CheckedChange;
+
             var swBigFont = v.FindViewById<Switch>(Resource.Id.swBigFont);
+            if (Nastaveni.BigFont)
+                swBigFont.Checked = true;
             swBigFont.CheckedChange += SwBigFont_CheckedChange;
+
             var swCenter = v.FindViewById<Switch>(Resource.Id.swCenter);
+            if (Nastaveni.Center)
+                swCenter.Checked = true;
             swCenter.CheckedChange += SwCenter_CheckedChange;
+
             var swLineBreaks = v.FindViewById<Switch>(Resource.Id.swLineBreaks);
+            if (Nastaveni.NoLineBreaks)
+                swLineBreaks.Checked = true;
             swLineBreaks.CheckedChange += SwLineBreaks_CheckedChange;
 
             return v;
@@ -179,10 +188,12 @@ namespace HelloSwipeViewWithTabs
             if (sw.Checked)
             {
                 Nastaveni.ChorusMany = true;
+                Nastaveni.SaveSetting("ChorusMany", true);
             }
             else
             {
                 Nastaveni.ChorusMany = false;
+                Nastaveni.SaveSetting("ChorusMany", false);
             }
         }
 
@@ -192,10 +203,12 @@ namespace HelloSwipeViewWithTabs
             if (sw.Checked)
             {
                 Nastaveni.BigFont = true;
+                Nastaveni.SaveSetting("BigFont", true);
             }
             else
             {
                 Nastaveni.BigFont = false;
+                Nastaveni.SaveSetting("BigFont", false);
             }
         }
 
@@ -205,10 +218,12 @@ namespace HelloSwipeViewWithTabs
             if (sw.Checked)
             {
                 Nastaveni.Center = true;
+                Nastaveni.SaveSetting("Center", true);
             }
             else
             {
                 Nastaveni.Center = false;
+                Nastaveni.SaveSetting("Center", false);
             }
         }
 
@@ -218,10 +233,12 @@ namespace HelloSwipeViewWithTabs
             if (sw.Checked)
             {
                 Nastaveni.NoLineBreaks = true;
+                Nastaveni.SaveSetting("NoLineBreaks", true);
             }
             else
             {
                 Nastaveni.NoLineBreaks = false;
+                Nastaveni.SaveSetting("NoLineBreaks", false);
             }
         }
 
