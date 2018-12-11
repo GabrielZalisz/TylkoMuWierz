@@ -209,6 +209,14 @@
 			android:layout_marginLeft="40dp"
 			android:layout_marginRight="40dp" />
 		<Switch
+			android:text="Ukryj pasek powiadomień"
+			android:layout_gravity="center"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/swHideStatusBar"
+			android:layout_marginLeft="40dp"
+			android:layout_marginRight="40dp" />
+		<Switch
 			android:text="Nie obracaj ekranu"
 			android:layout_gravity="center"
 			android:layout_width="match_parent"

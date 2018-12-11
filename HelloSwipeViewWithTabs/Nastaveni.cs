@@ -39,6 +39,24 @@ namespace HelloSwipeViewWithTabs
                 }
             }
         }
+        private static bool _hideStatusBar;
+
+        public static bool HideStatusBar
+        {
+            get { return _hideStatusBar; }
+            set
+            {
+                _hideStatusBar = value;
+                if (value)
+                {
+                    MainActivity.MyActivity.Window.AddFlags(WindowManagerFlags.Fullscreen);
+                }
+                else
+                {
+                    MainActivity.MyActivity.Window.ClearFlags(WindowManagerFlags.Fullscreen);
+                }
+            }
+        }
 
         private static bool _lockPortrait;
 

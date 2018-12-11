@@ -194,6 +194,11 @@ namespace HelloSwipeViewWithTabs
                 swHideHeader.Checked = true;
             swHideHeader.CheckedChange += SwHideHeader_CheckedChange;
 
+            var swStatusBar = v.FindViewById<Switch>(Resource.Id.swHideStatusBar);
+            if (Nastaveni.HideStatusBar)
+                swStatusBar.Checked = true;
+            swStatusBar.CheckedChange += SwStatusBar_CheckedChange;
+
             var swLockPortrait = v.FindViewById<Switch>(Resource.Id.swLockPortrait);
             if (Nastaveni.LockPortrait)
                 swLockPortrait.Checked = true;
@@ -276,6 +281,21 @@ namespace HelloSwipeViewWithTabs
             {
                 Nastaveni.HideHeader = false;
                 Nastaveni.SaveSetting("HideHeader", false);
+            }
+        }
+
+        private void SwStatusBar_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swHideStatusBar);
+            if (sw.Checked)
+            {
+                Nastaveni.HideStatusBar = true;
+                Nastaveni.SaveSetting("HideStatusBar", true);
+            }
+            else
+            {
+                Nastaveni.HideStatusBar = false;
+                Nastaveni.SaveSetting("HideStatusBar", false);
             }
         }
 

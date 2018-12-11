@@ -85,6 +85,7 @@ namespace HelloSwipeViewWithTabs
             MyTabLayout = tabLayout;
 
             Nastaveni.HideHeader = Nastaveni.GetSetting("HideHeader");
+            Nastaveni.HideStatusBar = Nastaveni.GetSetting("HideStatusBar");
             Nastaveni.LockPortrait = Nastaveni.GetSetting("LockPortrait");
 
             // Iterate over all tabs and set the custom view

@@ -48,7 +48,7 @@
 				android:typeface="serif"
 				android:textColor="#ff000000"
 				android:gravity="center"
-				android:text=" "
+				android:text="D"
 				android:paddingHorizontal="5dp"
 				android:id="@+id/tvTonacja" />
 			</TableRow>
