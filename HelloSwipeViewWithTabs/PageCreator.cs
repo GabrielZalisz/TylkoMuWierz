@@ -130,8 +130,15 @@ namespace HelloSwipeViewWithTabs
 
             var scrlv = v.FindViewById<ScrollView>(Resource.Id.scrollViewSong);
             MainActivity.MyScrollView = scrlv;
+            scrlv.Click += Scrlv_Click;
 
             return v;
+        }
+
+        private void Scrlv_Click(object sender, EventArgs e)
+        {
+            View view = (View)sender;
+            Snackbar.Make(view, "Klik", Snackbar.LengthLong).SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
 
         public View CreatePage4(LayoutInflater inflater, ViewGroup container)
@@ -178,6 +185,21 @@ namespace HelloSwipeViewWithTabs
             if (Nastaveni.NoLineBreaks)
                 swLineBreaks.Checked = true;
             swLineBreaks.CheckedChange += SwLineBreaks_CheckedChange;
+
+
+
+
+            var swHideHeader = v.FindViewById<Switch>(Resource.Id.swHideHeader);
+            if (Nastaveni.HideHeader)
+                swHideHeader.Checked = true;
+            swHideHeader.CheckedChange += SwHideHeader_CheckedChange;
+
+            var swLockPortrait = v.FindViewById<Switch>(Resource.Id.swLockPortrait);
+            if (Nastaveni.LockPortrait)
+                swLockPortrait.Checked = true;
+            swLockPortrait.CheckedChange += SwLockPortrait_CheckedChange;
+
+
 
             return v;
         }
@@ -239,6 +261,36 @@ namespace HelloSwipeViewWithTabs
             {
                 Nastaveni.NoLineBreaks = false;
                 Nastaveni.SaveSetting("NoLineBreaks", false);
+            }
+        }
+
+        private void SwHideHeader_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swHideHeader);
+            if (sw.Checked)
+            {
+                Nastaveni.HideHeader = true;
+                Nastaveni.SaveSetting("HideHeader", true);
+            }
+            else
+            {
+                Nastaveni.HideHeader = false;
+                Nastaveni.SaveSetting("HideHeader", false);
+            }
+        }
+
+        private void SwLockPortrait_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swLockPortrait);
+            if (sw.Checked)
+            {
+                Nastaveni.LockPortrait = true;
+                Nastaveni.SaveSetting("LockPortrait", true);
+            }
+            else
+            {
+                Nastaveni.LockPortrait = false;
+                Nastaveni.SaveSetting("LockPortrait", false);
             }
         }
 

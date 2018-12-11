@@ -18,6 +18,47 @@ namespace HelloSwipeViewWithTabs
     {
         //dočasné
 
+        //app
+        private static bool _hideHeader;
+
+        public static bool HideHeader
+        {
+            get { return _hideHeader; }
+            set
+            {
+                _hideHeader = value;
+                if (value)
+                {
+                    MainActivity.MyTabLayout.Visibility = ViewStates.Gone;
+                }
+                else
+                {
+                    MainActivity.MyTabLayout.Visibility = ViewStates.Visible;
+                }
+            }
+        }
+
+        private static bool _lockPortrait;
+
+        public static bool LockPortrait
+        {
+            get { return _lockPortrait; }
+            set
+            {
+                _lockPortrait = value;
+                if (value)
+                {
+                    MainActivity.MyActivity.RequestedOrientation = Android.Content.PM.ScreenOrientation.Nosensor;
+                }
+                else
+                {
+                    MainActivity.MyActivity.RequestedOrientation = Android.Content.PM.ScreenOrientation.Unspecified;
+                }
+            }
+        }
+
+
+
         //view2
 
         public static bool Alphabetically { get; set; }

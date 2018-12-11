@@ -23,6 +23,7 @@ namespace HelloSwipeViewWithTabs
         public static FloatingActionButton MyFab;
         public static Android.Widget.SearchView MySearchView;
         public static ScrollView MyScrollView;
+        public static TabLayout MyTabLayout;
 
         public override void OnBackPressed()
         {
@@ -81,6 +82,10 @@ namespace HelloSwipeViewWithTabs
 
             // Setup tablayout with view pager
             tabLayout.SetupWithViewPager(pager, true);
+            MyTabLayout = tabLayout;
+
+            Nastaveni.HideHeader = Nastaveni.GetSetting("HideHeader");
+            Nastaveni.LockPortrait = Nastaveni.GetSetting("LockPortrait");
 
             // Iterate over all tabs and set the custom view
             for (int i = 0; i < tabLayout.TabCount; i++)
