@@ -31,14 +31,14 @@
 				android:paddingHorizontal="5dp"
 				android:textColor="#ff000000"
 				android:gravity="center"
-				android:text="444"
+				android:text="   "
 				android:id="@+id/tvNumer" />
 			<TextView
 				android:textSize="20dp"
 				android:singleLine="false"
-				android:text="ag hafjgh afjgh af af dfasdasdjhadf"
+				android:text="   "
 				android:typeface="serif"
-				android:padding="5dp"
+				android:paddingTop="5dp"
 				android:textStyle="bold"
 				android:textColor="#ff000000"
 				android:gravity="center"
@@ -48,7 +48,7 @@
 				android:typeface="serif"
 				android:textColor="#ff000000"
 				android:gravity="center"
-				android:text="D"
+				android:text=" "
 				android:paddingHorizontal="5dp"
 				android:id="@+id/tvTonacja" />
 			</TableRow>

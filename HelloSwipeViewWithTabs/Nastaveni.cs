@@ -9,6 +9,8 @@ using Android.Graphics;
 using Android.OS;
 using Android.Preferences;
 using Android.Runtime;
+using Android.Text;
+using Android.Text.Style;
 using Android.Views;
 using Android.Widget;
 
@@ -67,7 +69,7 @@ namespace HelloSwipeViewWithTabs
 
         public static Song SelectedSong { get; set; }
         public static bool Center { get; set; }
-        public static bool BigFont { get; set; }//small=17dp, big=21dp
+        public static bool BigFont { get; set; }//small=18dp, big=22dp
         public static bool ChorusMany { get; set; }
         public static bool NoLineBreaks { get; set; }
         private static string _folder = "Tylko Mu Wierz";
@@ -131,6 +133,11 @@ namespace HelloSwipeViewWithTabs
 
             TextView tvSlowa = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvSlowa);
             tvSlowa.Text = Nastaveni.SelectedSong.SlowaToDisplay;
+
+            SpannableString sss = new SpannableString("abc def");
+            sss.SetSpan(new UnderlineSpan(), 0, 2, 0);
+            sss.SetSpan(new StyleSpan(TypefaceStyle.Bold), 2, 4, 0);
+            tvSlowa.SetText(sss, TextView.BufferType.Spannable);
 
             if (Nastaveni.Center)
                 tvSlowa.Gravity = GravityFlags.CenterHorizontal;
