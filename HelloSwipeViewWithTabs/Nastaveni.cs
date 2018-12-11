@@ -72,6 +72,13 @@ namespace HelloSwipeViewWithTabs
         public static bool BigFont { get; set; }//small=18dp, big=22dp
         public static bool ChorusMany { get; set; }
         public static bool NoLineBreaks { get; set; }
+        public static bool ChorusItalic { get; set; }
+
+
+
+
+
+
         private static string _folder = "Tylko Mu Wierz";
 
         public static string SelectedFolder
@@ -132,12 +139,25 @@ namespace HelloSwipeViewWithTabs
             tvTonacja.Text = Nastaveni.SelectedSong.Tonacja;
 
             TextView tvSlowa = PageFragment.view3.FindViewById<TextView>(Resource.Id.tvSlowa);
-            tvSlowa.Text = Nastaveni.SelectedSong.SlowaToDisplay;
-
-            SpannableString sss = new SpannableString("abc def");
-            sss.SetSpan(new UnderlineSpan(), 0, 2, 0);
-            sss.SetSpan(new StyleSpan(TypefaceStyle.Bold), 2, 4, 0);
-            tvSlowa.SetText(sss, TextView.BufferType.Spannable);
+            if (Nastaveni.ChorusItalic)
+            {
+                tvSlowa.Text = Nastaveni.SelectedSong.SlowaToDisplay;
+            }
+            else
+            {
+                //SpannableString sss = new SpannableString("abc def");
+                //sss.SetSpan(new UnderlineSpan(), 0, 2, 0);
+                //sss.SetSpan(new StyleSpan(TypefaceStyle.Bold), 2, 4, 0);
+                //tvSlowa.SetText(sss, TextView.BufferType.Spannable);
+                string slowa = Nastaveni.SelectedSong.SlowaToDisplay;
+                List<Refren> lr = Song.GetRefreny(slowa);
+                SpannableString sss = new SpannableString(slowa);
+                foreach (Refren r in lr)
+                {
+                    sss.SetSpan(new StyleSpan(TypefaceStyle.Italic), r.Start, r.End, 0);
+                }
+                tvSlowa.SetText(sss, TextView.BufferType.Spannable);
+            }
 
             if (Nastaveni.Center)
                 tvSlowa.Gravity = GravityFlags.CenterHorizontal;

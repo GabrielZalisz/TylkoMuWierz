@@ -100,7 +100,7 @@ namespace HelloSwipeViewWithTabs
                         }
                     }
                     data2.AddRange(data.Where(q => !data2.Contains(q)));//reszta
-                    ret = string.Join("\n\n", data2); 
+                    ret = string.Join("\n\n", data2);
                 }
 
                 if (Nastaveni.Center)
@@ -134,5 +134,41 @@ namespace HelloSwipeViewWithTabs
         public string BookReference { get; set; }
 
         public string Folder { get; set; }
+
+        public static List<Refren> GetRefreny(string slowa)
+        {
+            try
+            {
+                List<Refren> lr = new List<Refren>();
+                List<string> casti = slowa.Split("\n\n", StringSplitOptions.None).ToList();
+                List<string> refreny = casti.Where(q => q.StartsWith("R.")).ToList();
+                foreach (string r in refreny)
+                {
+                    int poradi = casti.IndexOf(r);
+                    string predchozi = string.Join("\n\n", casti.Take(poradi));
+                    int ior = predchozi.Length;
+                    int ioe = ior + r.Length;
+                    lr.Add(new Refren(ior, ioe));
+                    casti[poradi] = new string('x', casti[poradi].Length); //nuluji, aby se spočítaly i další refrény
+                }
+                return lr;
+            }
+            catch
+            {
+                return new List<Refren>();
+            }
+        }
+    }
+
+    public class Refren
+    {
+        public int Start;
+        public int End;
+
+        public Refren(int start, int end)
+        {
+            Start = start;
+            End = end;
+        }
     }
 }
