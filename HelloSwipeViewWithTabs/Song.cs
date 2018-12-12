@@ -148,7 +148,7 @@ namespace HelloSwipeViewWithTabs
                     string predchozi = string.Join("\n\n", casti.Take(poradi));
                     int ior = predchozi.Length;
                     int ioe = ior + r.Length;
-                    lr.Add(new Refren(ior, ioe));
+                    lr.Add(new Refren(ior, ioe + 2));//+2 musi być
                     casti[poradi] = new string('x', casti[poradi].Length); //nuluji, aby se spočítaly i další refrény
                 }
                 return lr;
