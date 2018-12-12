@@ -113,13 +113,13 @@ namespace HelloSwipeViewWithTabs
 
 
 
-        public static void SetView1()
-        {
-            if (PageFragment.view1 == null)
-                return;
+        //public static void SetView1()
+        //{
+        //    if (PageFragment.view1 == null)
+        //        return;
 
-            MainActivity.MySearchView.OnActionViewCollapsed();
-        }
+        //    MainActivity.MySearchView.OnActionViewCollapsed();
+        //}
 
         static string last_songbook;
 
@@ -133,8 +133,9 @@ namespace HelloSwipeViewWithTabs
                 PageCreator.RefreshListView();
                 last_songbook = SelectedFolder;
             }
-        }
 
+            MainActivity.MyActivity.Window.ClearFlags(WindowManagerFlags.KeepScreenOn);
+        }
 
         public static void SetView3()
         {
@@ -186,6 +187,19 @@ namespace HelloSwipeViewWithTabs
                 tvSlowa.SetTextSize(Android.Util.ComplexUnitType.Dip, 22);
             else
                 tvSlowa.SetTextSize(Android.Util.ComplexUnitType.Dip, 18);
+
+            MainActivity.MyActivity.Window.AddFlags(WindowManagerFlags.KeepScreenOn);
+            PageCreator.HideKeyboard();
+        }
+
+
+        public static void SetView4()
+        {
+            if (PageFragment.view4 == null)
+                return;
+
+            MainActivity.MyActivity.Window.ClearFlags(WindowManagerFlags.KeepScreenOn);
+            PageCreator.HideKeyboard();
         }
 
         public static void SaveSetting(string key, bool value)

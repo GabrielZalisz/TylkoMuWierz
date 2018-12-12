@@ -12,6 +12,7 @@ using Android.Support.V4.View;
 using Android.Text;
 using Android.Text.Method;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 
 namespace HelloSwipeViewWithTabs
@@ -78,8 +79,6 @@ namespace HelloSwipeViewWithTabs
 
             var sv = v.FindViewById<SearchView>(Resource.Id.searchView1);
             sv.QueryTextChange += Sv_QueryTextChange;
-            //sv.SetIconifiedByDefault(true);
-            //sv.SetQueryHint("Szukaj...");
             MainActivity.MySearchView = sv;
 
             return v;
@@ -91,6 +90,10 @@ namespace HelloSwipeViewWithTabs
             if (string.IsNullOrWhiteSpace(MainActivity.MySearchView.Query))
             {
                 DataManager.SongsToDisplay = DataManager.Songbook;
+                MainActivity.MySearchView.SetIconifiedByDefault(false);
+                //MainActivity.MySearchView.SetQueryHint("Szukaj...");
+                //HideKeyboard();
+                //MainActivity.MySearchView.OnActionViewCollapsed();
             }
             else
             {
@@ -333,7 +336,19 @@ namespace HelloSwipeViewWithTabs
             Nastaveni.SelectedSong = DataManager.SongsToDisplay[e.Position];
             MainActivity.MyScrollView.ScrollTo(0, 0);
             MainActivity.MyPager.SetCurrentItem(1, true);
-            MainActivity.MySearchView.OnActionViewCollapsed();
+            //MainActivity.MySearchView.OnActionViewCollapsed();
+            HideKeyboard();
+
+        }
+
+        public static void HideKeyboard()
+        {
+            View view = MainActivity.MyActivity.CurrentFocus;
+            if (view != null)
+            {
+                InputMethodManager imm = (InputMethodManager)MainActivity.MyActivity.GetSystemService(Context.InputMethodService);
+                imm.HideSoftInputFromWindow(view.WindowToken, 0);
+            }
         }
 
         //private void Btn_Click(object sender, EventArgs e)
