@@ -13,7 +13,7 @@ using Android.Views;
 using Android.Widget;
 using Java.IO;
 
-namespace HelloSwipeViewWithTabs
+namespace TylkoMuWierz
 {
 	public static class DataManager
 	{
@@ -77,72 +77,6 @@ namespace HelloSwipeViewWithTabs
             Songbook = AllSongs.Where(q => q.Folder == Nastaveni.SelectedFolder).ToList();
 			SongsToDisplay = Songbook;
 			Nastaveni.SelectedSong = SongsToDisplay.FirstOrDefault();
-			/*
-
-
-
-
-
-
-
-
-
-
-
-
-
-			Songs.Add(new Song()
-			{
-				Numer = 1,
-				Tytul = "Ccc test",
-				Tonacja = "E",
-				Slowa = "text text text text text text text text text text text text text text text text text text "
-			});
-
-			Songs.Add(new Song()
-			{
-				Numer = 2,
-				Tytul = "Bbb test",
-				Tonacja = "C",
-				Slowa = "text text text text text text text text text text text text text text text text text text "
-			});
-
-			Songs.Add(new Song()
-			{
-				Numer = 3,
-				Tytul = "Amazing Grace ěščřžýżąę",
-				Tonacja = "G",
-				Slowa = @"Amazing grace! (how sweet the sound)
-That saved a wretch like me!
-I once was lost,
-but now am found,
-Was blind, but now I see.
-
-'T was grace that taught my heart to fear,
-And grace my fears relieved;
-How precious did that grace appear
-The hour I first believed!
-
-Thro' many dangers, toils, and snares,
-I have already come;
-'Tis grace hath brought me safe thus far,
-And grace will lead me home.
-
-The Lord has promis'd good to me,
-His word my hope secures;
-He will my shield and portion be
-As long as life endures.
-
-Yes, when this flesh and heart shall fail,
-And mortal life shall cease;
-I shall possess, within the veil,
-A life of joy and peace.
-
-The earth shall soon dissolve like snow,
-The sun forbear to shine;
-But God, who call'd me here below,
-Will be forever mine."
-			});*/
 		}
 	}
 }

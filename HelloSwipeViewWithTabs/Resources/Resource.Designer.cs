@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("HelloSwipeViewWithTabs.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("TylkoMuWierz.Resource", IsApplication=true)]
 
-namespace HelloSwipeViewWithTabs
+namespace TylkoMuWierz
 {
 	
 	

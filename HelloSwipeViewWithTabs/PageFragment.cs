@@ -7,7 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Lang;
 
-namespace HelloSwipeViewWithTabs
+namespace TylkoMuWierz
 {
     public class PageFragment : Fragment
     {

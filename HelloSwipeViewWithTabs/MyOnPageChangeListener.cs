@@ -11,7 +11,7 @@ using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 
-namespace HelloSwipeViewWithTabs
+namespace TylkoMuWierz
 {
     class MyOnPageChangeListener : Java.Lang.Object, ViewPager.IOnPageChangeListener
     {

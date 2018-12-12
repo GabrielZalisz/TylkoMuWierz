@@ -15,7 +15,7 @@ using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
 
-namespace HelloSwipeViewWithTabs
+namespace TylkoMuWierz
 {
     class PageCreator
     {

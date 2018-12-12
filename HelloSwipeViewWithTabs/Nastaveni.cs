@@ -14,7 +14,7 @@ using Android.Text.Style;
 using Android.Views;
 using Android.Widget;
 
-namespace HelloSwipeViewWithTabs
+namespace TylkoMuWierz
 {
     static class Nastaveni
     {

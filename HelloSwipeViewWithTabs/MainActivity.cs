@@ -10,7 +10,7 @@ using Android.Views;
 using Android.Content;
 using static Android.Support.V4.View.ViewPager;
 
-namespace HelloSwipeViewWithTabs
+namespace TylkoMuWierz
 {
     [Activity(Label = "Tylko Mu Wierz", MainLauncher = true, Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round")]
     public class MainActivity : AppCompatActivity
