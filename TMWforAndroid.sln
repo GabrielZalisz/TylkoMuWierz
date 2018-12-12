@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28306.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloSwipeViewWithTabs", "HelloSwipeViewWithTabs\HelloSwipeViewWithTabs.csproj", "{21D164FE-4F27-4628-B189-5DC3A194AFCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMWforAndroid", "HelloSwipeViewWithTabs\TMWforAndroid.csproj", "{21D164FE-4F27-4628-B189-5DC3A194AFCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,5 +20,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2A0C287-D971-4719-827D-275F0D1B0ED1}
 	EndGlobalSection
 EndGlobal
