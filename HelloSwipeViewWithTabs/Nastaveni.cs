@@ -97,7 +97,7 @@ namespace HelloSwipeViewWithTabs
 
 
 
-        private static string _folder = "Tylko Mu Wierz";
+        private static string _folder = "Śpiewnik Tylko Mu Wierz";
 
         public static string SelectedFolder
         {

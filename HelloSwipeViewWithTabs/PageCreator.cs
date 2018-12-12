@@ -154,6 +154,9 @@ namespace HelloSwipeViewWithTabs
             var btnRadio = v.FindViewById<Button>(Resource.Id.btnRadio);
             btnRadio.Click += BtnRadio_Click;
 
+            var btnSpiewajPanu = v.FindViewById<Button>(Resource.Id.btnSpiewajPanu);
+            btnSpiewajPanu.Click += BtnSpiewajPanu_Click;
+
             //TextView textView = v.FindViewById<TextView>(Resource.Id.tvGitHub);
             //textView.Clickable = true;
             //textView.MovementMethod = LinkMovementMethod.Instance;
@@ -327,6 +330,13 @@ namespace HelloSwipeViewWithTabs
         private void BtnRadio_Click(object sender, EventArgs e)
         {
             var uri = Android.Net.Uri.Parse("http://radio.zapraszamy.pl/");
+            var intent = new Intent(Intent.ActionView, uri);
+            MainActivity.MyActivity.StartActivity(intent);
+        }
+
+        private void BtnSpiewajPanu_Click(object sender, EventArgs e)
+        {
+            var uri = Android.Net.Uri.Parse("https://play.google.com/store/apps/details?id=com.kupka.bku.piewajpanu&hl=en_US");
             var intent = new Intent(Intent.ActionView, uri);
             MainActivity.MyActivity.StartActivity(intent);
         }
