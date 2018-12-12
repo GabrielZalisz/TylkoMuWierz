@@ -2,7 +2,6 @@
 <resources>
   <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="colorAccent">#fff57c00</item>
-    <item name="colorPrimaryDark">#fff57c00</item>
     <item name="android:typeface">serif</item>
   </style>
 </resources>

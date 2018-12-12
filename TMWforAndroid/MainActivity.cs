@@ -9,6 +9,9 @@ using Android.Widget;
 using Android.Views;
 using Android.Content;
 using static Android.Support.V4.View.ViewPager;
+using static Android.App.ActivityManager;
+using System;
+using Android.Graphics;
 
 namespace TylkoMuWierz
 {
@@ -94,6 +97,11 @@ namespace TylkoMuWierz
                 TabLayout.Tab tab = tabLayout.GetTabAt(i);
                 tab.SetCustomView(adapter.GetTabView(i));
             }
+
+            Bitmap bm = BitmapFactory.DecodeResource(Resources, Resource.Drawable.ic_launcher_round);
+            TaskDescription taskDesc = new TaskDescription("Tylko Mu Wierz", bm, new Android.Graphics.Color(224, 176, 20));
+            SetTaskDescription(taskDesc);
+            
         }
     }
 }
