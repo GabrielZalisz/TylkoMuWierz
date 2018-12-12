@@ -29,16 +29,16 @@ namespace HelloSwipeViewWithTabs
         {
             switch (position)
             {
+                //case 0:
+                //    Nastaveni.SetView1();
+                //    break;
                 case 0:
-                    Nastaveni.SetView1();
-                    break;
-                case 1:
                     Nastaveni.SetView2();
                     break;
-                case 2:
+                case 1:
                     Nastaveni.SetView3();
                     break;
-                case 3:
+                case 2:
                     break;
             }
         }

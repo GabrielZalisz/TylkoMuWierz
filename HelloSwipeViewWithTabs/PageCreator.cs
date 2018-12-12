@@ -332,7 +332,7 @@ namespace HelloSwipeViewWithTabs
         {
             Nastaveni.SelectedSong = DataManager.SongsToDisplay[e.Position];
             MainActivity.MyScrollView.ScrollTo(0, 0);
-            MainActivity.MyPager.SetCurrentItem(2, true);
+            MainActivity.MyPager.SetCurrentItem(1, true);
             MainActivity.MySearchView.OnActionViewCollapsed();
         }
 

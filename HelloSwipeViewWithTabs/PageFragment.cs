@@ -53,25 +53,25 @@ namespace HelloSwipeViewWithTabs
             //ft.Detach(this).Attach(this).CommitAllowingStateLoss();
             switch (mPage)
             {
+                //case 1:
+                //    if (view1 == null)
+                //    {
+                //        view1 = pc.CreatePage1(inflater, container);
+                //    }
+                //    return view1;
                 case 1:
-                    if (view1 == null)
-                    {
-                        view1 = pc.CreatePage1(inflater, container);
-                    }
-                    return view1;
-                case 2:
                     if (view2 == null)
                     {
                         view2 = pc.CreatePage2(inflater, container);
                     }
                     return view2;
-                case 3:
+                case 2:
                     if (view3 == null)
                     {
                         view3 = pc.CreatePage3(inflater, container);
                     }
                     return view3;
-                case 4:
+                case 3:
                     if (view4 == null)
                     {
                         view4 = pc.CreatePage4(inflater, container);

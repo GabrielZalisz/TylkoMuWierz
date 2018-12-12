@@ -74,7 +74,7 @@ namespace HelloSwipeViewWithTabs
 
 			AllSongs = piesni.OrderBy(qq => qq.Numer).ToList();
 
-			Songbook = AllSongs.Where(q => q.Folder == Nastaveni.SelectedFolder).ToList();
+            Songbook = AllSongs.Where(q => q.Folder == Nastaveni.SelectedFolder).ToList();
 			SongsToDisplay = Songbook;
 			Nastaveni.SelectedSong = SongsToDisplay.FirstOrDefault();
 			/*

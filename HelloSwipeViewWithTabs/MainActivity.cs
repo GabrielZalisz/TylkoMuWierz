@@ -29,14 +29,14 @@ namespace HelloSwipeViewWithTabs
         {
             switch (MainActivity.MyPager.CurrentItem)
             {
-                case 3:
-                    MainActivity.MyPager.SetCurrentItem(2, true);
-                    break;
+                //case 3:
+                //    MainActivity.MyPager.SetCurrentItem(2, true);
+                //    break;
                 case 2:
                     MainActivity.MyPager.SetCurrentItem(1, true);
                     break;
-                case 0:
-                    MainActivity.MyPager.SetCurrentItem(1, true);
+                case 1:
+                    MainActivity.MyPager.SetCurrentItem(0, true);
                     break;
                 default:
                     base.OnBackPressed();
@@ -78,7 +78,7 @@ namespace HelloSwipeViewWithTabs
 
             // Set adapter to view pager
             pager.Adapter = adapter;
-            pager.SetCurrentItem(1, false);
+            //pager.SetCurrentItem(0, false);
 
             // Setup tablayout with view pager
             tabLayout.SetupWithViewPager(pager, true);
