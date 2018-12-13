@@ -76,7 +76,8 @@ namespace TylkoMuWierz
 
             Songbook = AllSongs.Where(q => q.Folder == Nastaveni.SelectedFolder).ToList();
 			SongsToDisplay = Songbook;
-			Nastaveni.SelectedSong = SongsToDisplay.FirstOrDefault();
+            if (Nastaveni.SelectedSong == null)
+			    Nastaveni.SelectedSong = SongsToDisplay.FirstOrDefault();
 		}
 	}
 }

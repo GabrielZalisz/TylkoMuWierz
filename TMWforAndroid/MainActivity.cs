@@ -51,6 +51,9 @@ namespace TylkoMuWierz
         {
             base.OnCreate(bundle);
 
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.main);
+
             MyContext = this.ApplicationContext;
 
             MyActivity = this;
@@ -61,9 +64,6 @@ namespace TylkoMuWierz
             Nastaveni.NoLineBreaks = Nastaveni.GetSetting("NoLineBreaks");
 
             DataManager.LoadSongs();
-
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.main);
 
             // Find views
             var pager = FindViewById<ViewPager>(Resource.Id.pager);
@@ -101,7 +101,6 @@ namespace TylkoMuWierz
             Bitmap bm = BitmapFactory.DecodeResource(Resources, Resource.Drawable.ic_launcher_round);
             TaskDescription taskDesc = new TaskDescription("Tylko Mu Wierz", bm, new Android.Graphics.Color(224, 176, 20));
             SetTaskDescription(taskDesc);
-            
         }
     }
 }

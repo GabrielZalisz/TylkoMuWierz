@@ -148,6 +148,12 @@ namespace TylkoMuWierz
         {
             View v = inflater.Inflate(Resource.Layout.fragment_page_4, container, false);
 
+            var btnShareSong = v.FindViewById<Button>(Resource.Id.btnShareSong);
+            btnShareSong.Click += BtnShareSong_Click;
+
+            var btnShareApp = v.FindViewById<Button>(Resource.Id.btnShareApp);
+            btnShareApp.Click += BtnShareApp_Click;
+
             var btnMyBible = v.FindViewById<Button>(Resource.Id.btnMyBible);
             btnMyBible.Click += BtnMyBible_Click;
             
@@ -317,6 +323,49 @@ namespace TylkoMuWierz
             {
                 Nastaveni.LockPortrait = false;
                 Nastaveni.SaveSetting("LockPortrait", false);
+            }
+        }
+
+        private void BtnShareSong_Click(object sender, EventArgs e)
+        {
+            if (Nastaveni.SelectedSong == null)
+            {
+                View view = (View)sender;
+                Snackbar.Make(view, "Nie jest wybrana żadna pieśń.", Snackbar.LengthLong).SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+                return;
+            }
+            try
+            {
+                string title = Nastaveni.SelectedSong.Tytul;
+                string dur = Nastaveni.SelectedSong.Tonacja;
+                int numer = Nastaveni.SelectedSong.Numer;
+                string slowa = Nastaveni.SelectedSong.SlowaToDisplay;
+
+                Intent i = new Intent(Intent.ActionSend);
+                i.SetType("text/plain");
+                i.PutExtra(Intent.ExtraSubject, "TMW " + numer.ToString());
+                i.PutExtra(Intent.ExtraText, title + " (" + dur + ")\n\n" + slowa);
+                MainActivity.MyActivity.StartActivity(Intent.CreateChooser(i, "Udostępnij pieśń " + title));
+            }
+            catch (Exception ee)
+            {
+                //ee.toString();
+            }
+        }
+
+        private void BtnShareApp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Intent i = new Intent(Intent.ActionSend);
+                i.SetType("text/plain");
+                i.PutExtra(Intent.ExtraSubject, "Tylko Mu Wierz");
+                i.PutExtra(Intent.ExtraText, "Polecam aplikację Tylko Mu Wierz dla Androida: https://play.google.com/store/apps/details?id=com.xamarin.songbook.tmw");
+                MainActivity.MyActivity.StartActivity(Intent.CreateChooser(i, "Udostępnij aplikację Tylko Mu Wierz"));
+            }
+            catch (Exception ee)
+            {
+                //ee.toString();
             }
         }
 

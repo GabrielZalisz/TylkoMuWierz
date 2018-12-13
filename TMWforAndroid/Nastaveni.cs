@@ -85,7 +85,11 @@ namespace TylkoMuWierz
 
         //view3
 
-        public static Song SelectedSong { get; set; }
+        public static Song SelectedSong
+        {
+            get;
+            set;
+        }
         public static bool Center { get; set; }
         public static bool BigFont { get; set; }//small=18dp, big=22dp
         public static bool ChorusMany { get; set; }
@@ -104,6 +108,8 @@ namespace TylkoMuWierz
             get { return _folder; }
             set { _folder = value; }
         }
+
+        public static bool Loaded { get; internal set; }
 
 
 
@@ -200,6 +206,12 @@ namespace TylkoMuWierz
 
             MainActivity.MyActivity.Window.ClearFlags(WindowManagerFlags.KeepScreenOn);
             PageCreator.HideKeyboard();
+
+            if (Nastaveni.SelectedSong != null)
+            {
+                Button btnShareSong = PageFragment.view4.FindViewById<Button>(Resource.Id.btnShareSong);
+                btnShareSong.Text = "Pieśń " + Nastaveni.SelectedSong.Tytul;
+            }
         }
 
         public static void SaveSetting(string key, bool value)
