@@ -25,15 +25,17 @@ namespace TylkoMuWierz
 		
 		static string GetNormalTitle(string title, string obsah)
 		{
+            string poms;
 			string tytul_bez_duru = (title.IndexOf('(') > -1 ? title.Substring(0, title.IndexOf('(') - 1) : title).Trim();
 			if (obsah.ToLower().Contains(tytul_bez_duru.ToLower()))
 			{
-				return obsah.Substring(obsah.ToLower().IndexOf(tytul_bez_duru.ToLower()), tytul_bez_duru.Length);
+				poms = obsah.Substring(obsah.ToLower().IndexOf(tytul_bez_duru.ToLower()), tytul_bez_duru.Length);
 			}
 			else
 			{
-				return tytul_bez_duru;
+				poms = tytul_bez_duru;
 			}
+            return poms.Substring(0, 1).ToUpper() + poms.Substring(1);
 		}
 
 		public static void LoadSongs()

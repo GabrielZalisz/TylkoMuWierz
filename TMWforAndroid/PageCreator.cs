@@ -97,7 +97,7 @@ namespace TylkoMuWierz
             }
             else
             {
-                DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Tytul.ToLower().Contains(query) || q.Slowa.Replace("\n", " ").Replace("  ", " ").ToLower().Contains(query)).ToList();
+                DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Numer.ToString().Contains(query) || q.Tytul.ToLower().Contains(query) || q.Slowa.Replace("\n", " ").Replace("  ", " ").ToLower().Contains(query)).ToList();
             }
             RefreshListView();
         }
@@ -339,7 +339,11 @@ namespace TylkoMuWierz
                 string title = Nastaveni.SelectedSong.Tytul;
                 string dur = Nastaveni.SelectedSong.Tonacja;
                 int numer = Nastaveni.SelectedSong.Numer;
+
+                bool pomb = Nastaveni.Center;
+                Nastaveni.Center = false;
                 string slowa = Nastaveni.SelectedSong.SlowaToDisplay;
+                Nastaveni.Center = pomb;
 
                 Intent i = new Intent(Intent.ActionSend);
                 i.SetType("text/plain");
