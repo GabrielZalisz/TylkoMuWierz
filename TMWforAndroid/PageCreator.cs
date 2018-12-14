@@ -97,7 +97,15 @@ namespace TylkoMuWierz
             }
             else
             {
-                DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Numer.ToString().Contains(query) || q.Tytul.ToLower().Contains(query) || q.Slowa.Replace("\n", " ").Replace("  ", " ").ToLower().Contains(query)).ToList();
+                int num;
+                if (int.TryParse(query, out num))
+                {
+                    DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Numer == num).ToList();
+                }
+                else
+                {
+                    DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Tytul.ToLower().Contains(query) || q.Slowa.Replace("\n", " ").Replace("  ", " ").ToLower().Contains(query)).ToList();
+                }
             }
             RefreshListView();
         }
