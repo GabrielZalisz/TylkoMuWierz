@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
 using Android.Preferences;
@@ -50,11 +51,9 @@ namespace TylkoMuWierz
                 if (value)
                 {
                     MainActivity.MyActivity.Window.AddFlags(WindowManagerFlags.Fullscreen);
-                    //MainActivity.MyActivity.Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
                 }
                 else
                 {
-                    //MainActivity.MyActivity.Window.AddFlags(WindowManagerFlags.ForceNotFullscreen);
                     MainActivity.MyActivity.Window.ClearFlags(WindowManagerFlags.Fullscreen);
                 }
             }
@@ -67,10 +66,14 @@ namespace TylkoMuWierz
             get { return _lockPortrait; }
             set
             {
+                Android.Content.Res.Orientation ooo = MainActivity.MyActivity.Resources.Configuration.Orientation;
                 _lockPortrait = value;
                 if (value)
                 {
-                    MainActivity.MyActivity.RequestedOrientation = Android.Content.PM.ScreenOrientation.Nosensor;
+                    if (ooo == Android.Content.Res.Orientation.Portrait)
+                        MainActivity.MyActivity.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
+                    else
+                        MainActivity.MyActivity.RequestedOrientation = Android.Content.PM.ScreenOrientation.Landscape;
                 }
                 else
                 {

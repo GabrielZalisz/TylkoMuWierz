@@ -88,7 +88,9 @@ namespace TylkoMuWierz
             MyTabLayout = tabLayout;
 
             Nastaveni.HideHeader = Nastaveni.GetSetting("HideHeader");
+
             Nastaveni.HideStatusBar = Nastaveni.GetSetting("HideStatusBar");
+
             Nastaveni.LockPortrait = Nastaveni.GetSetting("LockPortrait");
 
             // Iterate over all tabs and set the custom view
@@ -102,7 +104,7 @@ namespace TylkoMuWierz
             TaskDescription taskDesc = new TaskDescription("Tylko Mu Wierz", bm, new Android.Graphics.Color(224, 176, 20));
             SetTaskDescription(taskDesc);
 
-            AndroidBug5497Workaround.assistActivity(MyActivity);
+            AndroidBug5497Workaround.assistActivity(MainActivity.MyActivity);
         }
     }
 }
