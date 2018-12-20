@@ -50,9 +50,11 @@ namespace TylkoMuWierz
                 if (value)
                 {
                     MainActivity.MyActivity.Window.AddFlags(WindowManagerFlags.Fullscreen);
+                    //MainActivity.MyActivity.Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
                 }
                 else
                 {
+                    //MainActivity.MyActivity.Window.AddFlags(WindowManagerFlags.ForceNotFullscreen);
                     MainActivity.MyActivity.Window.ClearFlags(WindowManagerFlags.Fullscreen);
                 }
             }

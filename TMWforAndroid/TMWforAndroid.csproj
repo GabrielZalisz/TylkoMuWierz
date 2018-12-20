@@ -120,6 +120,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AndroidBug5497Workaround.cs" />
     <Compile Include="CustomPagerAdapter.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="MainActivity.cs" />
