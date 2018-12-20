@@ -61,7 +61,7 @@ namespace TylkoMuWierz
 
         private static bool _lockPortrait;
 
-        public static bool LockPortrait
+        public static bool NoRotate
         {
             get { return _lockPortrait; }
             set

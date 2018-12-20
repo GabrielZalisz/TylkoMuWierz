@@ -41,6 +41,16 @@ namespace TylkoMuWierz
                 case 1:
                     MainActivity.MyPager.SetCurrentItem(0, true);
                     break;
+                case 0:
+                    if (string.IsNullOrEmpty(MySearchView.Query))
+                    {
+                        base.OnBackPressed();
+                    }
+                    else
+                    {
+                        MySearchView.SetQuery("", false);
+                    }
+                    break;
                 default:
                     base.OnBackPressed();
                     break;
@@ -91,7 +101,7 @@ namespace TylkoMuWierz
 
             Nastaveni.HideStatusBar = Nastaveni.GetSetting("HideStatusBar");
 
-            Nastaveni.LockPortrait = Nastaveni.GetSetting("LockPortrait");
+            //Nastaveni.LockPortrait = Nastaveni.GetSetting("LockPortrait");
 
             // Iterate over all tabs and set the custom view
             for (int i = 0; i < tabLayout.TabCount; i++)

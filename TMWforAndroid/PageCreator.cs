@@ -220,7 +220,7 @@ namespace TylkoMuWierz
             swStatusBar.CheckedChange += SwStatusBar_CheckedChange;
 
             var swLockPortrait = v.FindViewById<Switch>(Resource.Id.swLockPortrait);
-            if (Nastaveni.LockPortrait)
+            if (Nastaveni.NoRotate)
                 swLockPortrait.Checked = true;
             swLockPortrait.CheckedChange += SwLockPortrait_CheckedChange;
 
@@ -324,13 +324,14 @@ namespace TylkoMuWierz
             var sw = PageFragment.view4.FindViewById<Switch>(Resource.Id.swLockPortrait);
             if (sw.Checked)
             {
-                Nastaveni.LockPortrait = true;
-                Nastaveni.SaveSetting("LockPortrait", true);
+                Nastaveni.NoRotate = true;
+                //neukládám: do konce aplikace nechám to co je aktuálně
+                //Nastaveni.SaveSetting("LockPortrait", true);
             }
             else
             {
-                Nastaveni.LockPortrait = false;
-                Nastaveni.SaveSetting("LockPortrait", false);
+                Nastaveni.NoRotate = false;
+                //Nastaveni.SaveSetting("LockPortrait", false);
             }
         }
 
