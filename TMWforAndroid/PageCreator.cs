@@ -116,12 +116,14 @@ namespace TylkoMuWierz
             if (Nastaveni.Alphabetically)
             {
                 MainActivity.MyFab.SetImageDrawable(ContextCompat.GetDrawable(c, Resource.Drawable.sort_by_numeric_order));
-                DataManager.SongsToDisplay = DataManager.Songbook.OrderBy(q => q.Tytul).ToList();
+                DataManager.Songbook = DataManager.Songbook.OrderBy(q => q.Tytul).ToList();
+                DataManager.SongsToDisplay = DataManager.SongsToDisplay.OrderBy(q => q.Tytul).ToList();
             }
             else
             {
                 MainActivity.MyFab.SetImageDrawable(ContextCompat.GetDrawable(c, Resource.Drawable.sort_by_alphabet));
-                DataManager.SongsToDisplay = DataManager.Songbook.OrderBy(q => q.Numer).ToList();
+                DataManager.Songbook = DataManager.Songbook.OrderBy(q => q.Numer).ToList();
+                DataManager.SongsToDisplay = DataManager.SongsToDisplay.OrderBy(q => q.Numer).ToList();
             }
             RefreshListView();
         }

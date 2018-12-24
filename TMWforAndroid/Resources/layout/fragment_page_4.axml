@@ -146,7 +146,7 @@
 			android:layout_marginLeft="40dp"
 			android:layout_marginRight="40dp" />
 		<Switch
-			android:text="Nie dziel linii w zwrotce"
+			android:text="Nie dziel linii"
 			android:layout_gravity="center"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
 			android:layout_marginLeft="40dp"
 			android:layout_marginRight="40dp" />
 		<Switch
-			android:text="Wyrównaj tekst na środek"
+			android:text="Wyśrodkuj tekst"
 			android:layout_gravity="center"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
