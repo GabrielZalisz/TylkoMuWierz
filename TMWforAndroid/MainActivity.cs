@@ -111,7 +111,7 @@ namespace TylkoMuWierz
             }
 
             Bitmap bm = BitmapFactory.DecodeResource(Resources, Resource.Drawable.ic_launcher_round);
-            TaskDescription taskDesc = new TaskDescription("Tylko Mu Wierz", bm, new Android.Graphics.Color(224, 176, 20));
+            TaskDescription taskDesc = new TaskDescription("Tylko Mu Wierz", bm, new Android.Graphics.Color(234, 206, 96));
             SetTaskDescription(taskDesc);
 
             AndroidBug5497Workaround.assistActivity(MainActivity.MyActivity);

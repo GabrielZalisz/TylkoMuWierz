@@ -40,6 +40,9 @@ namespace TylkoMuWierz
 
 		public static void LoadSongs()
 		{
+            if (SongsToDisplay.Count() != 0 && Songbook.Count() != 0)
+                return;
+
 			string songbook;
 			using (StreamReader sr = new StreamReader(MainActivity.MyContext.Assets.Open("songbook_Tylko Mu Wierz.xml")))
 			{
