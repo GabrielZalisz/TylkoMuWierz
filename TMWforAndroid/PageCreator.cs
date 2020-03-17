@@ -109,7 +109,7 @@ namespace TylkoMuWierz
             }
             RefreshListView();
         }
-
+        
         private string CleanText (string text)
         {
             text = text.Replace('ě', 'e');
