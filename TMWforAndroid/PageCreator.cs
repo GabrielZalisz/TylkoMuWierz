@@ -112,6 +112,7 @@ namespace TylkoMuWierz
         
         private string CleanText (string text)
         {
+
             text = text.Replace('ě', 'e');
             text = text.Replace('š', 's');
             text = text.Replace('č', 'c');
@@ -135,6 +136,11 @@ namespace TylkoMuWierz
             text = text.Replace('ú', 'u');
             text = text.Replace('ů', 'u');
             text = text.Replace('ř', 'r');
+            text = text.Replace(",", " ");
+            text = text.Replace(".", " ");
+            text = text.Replace("!", " ");
+            text = text.Replace("  ", " ");
+
             return text;
         }
 
