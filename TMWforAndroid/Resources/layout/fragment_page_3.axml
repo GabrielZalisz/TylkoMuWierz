@@ -61,7 +61,10 @@
 		   android:layout_height="wrap_content"
 		   android:layout_weight="1"
 		   android:fillViewport="true">
-		<LinearLayout android:orientation="vertical">
+		<LinearLayout 
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
 			<TableLayout
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
@@ -70,8 +73,12 @@
 				android:shrinkColumns="1"
 				android:maxHeight="50dp">
 				<TableRow
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
 					android:id="@+id/tableRow1">
 					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
 						android:textSize="20dp"
 						android:minWidth="50dp"
 						android:typeface="serif"
@@ -82,16 +89,19 @@
 						android:text="444"
 						android:id="@+id/tvNumer" />
 					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
 						android:textSize="20dp"
 						android:singleLine="false"
-						android:text="ag hafjgh afjgh af af df
-asdasdjhadf"
+						android:text="aaa"
 						android:typeface="serif"
 						android:padding="5dp"
 						android:textColor="#ff000000"
 						android:gravity="left"
 						android:id="@+id/tvTytul" />
 					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
 						android:textSize="20dp"
 						android:typeface="serif"
 						android:padding="5dp"
