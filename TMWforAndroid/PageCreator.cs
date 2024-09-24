@@ -456,6 +456,7 @@ namespace TylkoMuWierz
             {
                 InputMethodManager imm = (InputMethodManager)MainActivity.MyActivity.GetSystemService(Context.InputMethodService);
                 imm.HideSoftInputFromWindow(view.WindowToken, 0);
+                MainActivity.MySearchView.ClearFocus();
             }
         }
 
