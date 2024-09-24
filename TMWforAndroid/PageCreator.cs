@@ -104,10 +104,44 @@ namespace TylkoMuWierz
                 }
                 else
                 {
-                    DataManager.SongsToDisplay = DataManager.Songbook.Where(q => q.Tytul.ToLower().Contains(query) || q.Slowa.Replace("\n", " ").Replace("  ", " ").ToLower().Contains(query)).ToList();
+                    DataManager.SongsToDisplay = DataManager.Songbook.Where(q => CleanText(q.Tytul.ToLower()).Contains(CleanText(query)) || CleanText(q.Slowa.Replace("\n", " ").Replace("  ", " ").ToLower()).Contains(CleanText(query))).ToList();
                 }
             }
             RefreshListView();
+        }
+        
+        private string CleanText (string text)
+        {
+
+            text = text.Replace('ě', 'e');
+            text = text.Replace('š', 's');
+            text = text.Replace('č', 'c');
+            text = text.Replace('ř', 'r');
+            text = text.Replace('ž', 'z');
+            text = text.Replace('ý', 'y');
+            text = text.Replace('á', 'a');
+            text = text.Replace('í', 'i');
+            text = text.Replace('é', 'e');
+            text = text.Replace('ł', 'l');
+            text = text.Replace('ľ', 'l');
+            text = text.Replace('ň', 'n');
+            text = text.Replace('ń', 'n');
+            text = text.Replace('ś', 's');
+            text = text.Replace('ć', 'c');
+            text = text.Replace('ź', 'z');
+            text = text.Replace('ż', 'z');
+            text = text.Replace('ę', 'e');
+            text = text.Replace('ą', 'a');
+            text = text.Replace('ó', 'o');
+            text = text.Replace('ú', 'u');
+            text = text.Replace('ů', 'u');
+            text = text.Replace('ř', 'r');
+            text = text.Replace(",", " ");
+            text = text.Replace(".", " ");
+            text = text.Replace("!", " ");
+            text = text.Replace("  ", " ");
+
+            return text;
         }
 
         private void Fab_Click(object sender, EventArgs e)
